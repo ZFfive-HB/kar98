@@ -13,17 +13,18 @@
     $stateProvider
         .state('kar98', {
           url: '/kar98',
-          templateUrl : 'app/pages/kar98/kar98.html',
-          // abstract: true,
+          templateurl: 'app/pages/kar98/kar98.html',
+
+          abstract: false,
           // controller: 'LawsPageCtrl',
-          title: '989898',
+          title: 'Kar98',
           sidebarMeta: {
             icon: 'ion-grid',
             order: 300,
           },
         });
         // 默认显示
-    // $urlRouterProvider.when('/emergency','/emergency/sys');
+    // $urlRouterProvider.when('/kar98','/management/safe');
   }
 
 })();

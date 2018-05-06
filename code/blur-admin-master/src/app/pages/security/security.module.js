@@ -13,36 +13,14 @@
     $stateProvider
         .state('security', {
           url: '/security',
-          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
-          // templateUrl: 'app/pages/security/security.html',
-          abstract: true,
+          // templateUrl: 'app/pages/maps/maps.html',
+          // abstract: true,
           title: '安全检查',
-          controller:'securityPageCtrl',
           sidebarMeta: {
-            icon: 'ion-qr-scanner',
+            icon: 'ion-ios-location-outline',
             order: 500,
           },
-        })
-        .state('security.account', {
-          url: '/account',
-          templateUrl: 'app/pages/security/account/security.html',
-          // abstract: true,
-          title: '安全检查台账',
-          sidebarMeta: {
-            order: 500,
-          },
-        })
-        .state('security.add', {
-          url: '/add',
-          templateUrl: 'app/pages/security/add/add.html',
-          // abstract: true,
-          title: '安全检查台账添加',
-          // controller:'securityPageCtrl',
-          sidebarMeta: {
-            order: 500,
-          },
-        })
-        ;
+        });
   }
 
 })();

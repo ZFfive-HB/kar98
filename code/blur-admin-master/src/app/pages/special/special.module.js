@@ -13,25 +13,25 @@
     $stateProvider
         .state('special', {
           url: '/special',
-          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
+          // templateUrl: 'app/pages/maps/maps.html',
           abstract: true,
           title: '特种设备管理',
           sidebarMeta: {
-            icon: 'ion-hammer',
+            icon: 'ion-ios-location-outline',
             order: 500,
           },
         }).state('special.monitor', {
           url: '/monitor',
-          templateUrl: 'app/pages/special/monitor/special.html',
+          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
           // controller: 'GmapPageCtrl',
           title: '检测管理',
           sidebarMeta: {
-            order: 2,
+            order: 0,
           },
          
         }).state('special.account', {
           url: '/account',
-          templateUrl: 'app/pages/special/account/special.html',
+          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
           // controller: 'GmapPageCtrl',
           title: '台账管理',
           sidebarMeta: {
