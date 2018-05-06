@@ -1,0 +1,57 @@
+<div class="horizontal-scroll">
+    <div class="form-group select-page-size-wrap ">
+      <label>每页显示条数
+        <select class="form-control selectpicker show-tick" title="10" selectpicker
+                ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+        </select>
+      </label>
+    </div>
+    <table class="table" st-table="fixTableData">
+      <thead>
+      <tr class="sortable ">
+        <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+        <th st-sort="">区域</th>
+        <th st-sort="">设施大类</th>
+        <th st-sort="">设施子类</th>
+        <th st-sort="">设备编号</th>
+        <th st-sort="">设备名称</th>
+        <th st-sort="">属地部门</th>
+        <th st-sort="">地理区域编号</th>
+        <th st-sort="">检测结论</th>
+      </tr>
+      <!-- <tr>
+        <th></th>
+        <th><input st-search="firstName" placeholder="Search First Name" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="username" placeholder="Search Username" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="email" placeholder="Search Email" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="age" placeholder="Search Age" class="input-sm form-control search-input" type="search"/>
+        </th>
+      </tr> -->
+      </thead>
+      <tbody>
+      <tr ng-repeat="data in fixTableData">
+        <td class="table-id">{{data.id}}</td>
+        <td>{{data.area}}</td>
+        <td>{{data.bigLevel}}</td>
+        <td>{{data.smallLevel}}</td>
+        <td>{{data.num}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.dept}}</td>
+        <td>{{data.addNum}}</td>
+        <td>{{data.result}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="9" class="text-center">
+          <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>

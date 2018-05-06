@@ -1,0 +1,51 @@
+<form>
+  <div class="form-group">
+    <label for="input01">方案编号</label>
+    <input type="text" class="form-control" id="input01" placeholder="Text">
+  </div>
+  <div class="form-group">
+    <label for="input02">方案名称</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text">
+  </div>
+  <div class="form-group">
+    <label for="input03">引用计划</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text">
+  </div>
+  <div class="form-group">
+      <label for="input04">检查类型</label>
+    <ui-select ng-model="selectpickerVm.selectedItem.selected" class="btn-group bootstrap-select form-control" ng-disabled="false"
+      append-to-body="true" search-enabled="false">
+      <ui-select-match placeholder="Standard Select">
+        <span> {{$select.selected.label}}</span>
+      </ui-select-match>
+      <ui-select-choices repeat="standardItem in selectpickerVm.standardSelectItems | filter: $select.search">
+        <span ng-bind-html="standardItem.label"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="form-group">
+    <label for="input04"> </label>
+    <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners">
+  </div>
+  <div class="form-group">
+    <label for="input04">With help</label>
+    <input type="text" class="form-control" id="input04" placeholder="With help">
+    <span class="help-block sub-little-text">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+  </div>
+  <div class="form-group">
+    <label for="input05">Disabled Input</label>
+    <input type="text" class="form-control" id="input05" placeholder="Disabled Input" disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea01">Textarea</label>
+    <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control input-sm" id="input2" placeholder="Small Input">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control input-lg" id="input4" placeholder="Large Input">
+  </div>
+</form>

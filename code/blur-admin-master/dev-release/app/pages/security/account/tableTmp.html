@@ -1,0 +1,64 @@
+<div class="horizontal-scroll">
+    <div class="form-group select-page-size-wrap ">
+      <label>
+        <span>每页显示行数</span>
+        <select class="form-control selectpicker show-tick" title="每页显示行数" selectpicker
+                ng-model="PageSize" ng-options="i for i in [5,10,15,20,25]">
+        </select>
+      </label>
+    </div>
+    <table class="table" st-table="items">
+      <thead>
+      <tr class="sortable">
+        <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+        <th st-sort="cate">类别</th>
+        <th st-sort="checkTime">检查时间</th>
+        <th st-sort="persion">检查人</th>
+        <th st-sort="pullsorce">危险源</th>
+        <th st-sort="dept">所在部门</th>
+        <th st-sort="area">所在区域</th>
+        <th st-sort="accident">可能事故</th>
+        <th st-sort="porblem">存在问题</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><input st-search="cate" placeholder="筛选类别" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="checkTime" placeholder="筛选时间" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="persion" placeholder="筛选检查人" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="pullsorce" placeholder="输入关键字" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="dept" placeholder="筛选部门" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="area" placeholder="区域关键字" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="accident" placeholder="筛选事故" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="porblem" placeholder="输入关键字" class="input-sm form-control search-input" type="search"/>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in items">
+        <td class="table-id">{{item.id}}</td>
+        <td>{{item.cate}}</td>
+        <td>{{item.checkTime}}</td>
+        <td>{{item.persion}}</td>
+        <td>{{item.pullsorce}}</td>
+        <td>{{item.dept}}</td>
+        <td>{{item.area}}</td>
+        <td>{{item.accident}}</td>
+        <td>{{item.porblem}}</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="9" class="text-center">
+          <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
