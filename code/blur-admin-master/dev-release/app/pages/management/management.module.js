@@ -15,34 +15,34 @@
           url: '/management',
           template : '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          // controller: 'LawsPageCtrl',
+          controller: 'managementPageCtrl',
           title: '企业管理制度',
           sidebarMeta: {
             icon: 'ion-grid',
-            order: 300,
-          },
+            order: 300
+          }
         }).state('management.safe', {
           url: '/safe',
-          // templateUrl: 'app/pages/laws/nationLaws/nationLaws.html',
+          templateUrl: 'app/pages/management/safe/safe.html',
           title: '安全管理制度',
           sidebarMeta: {
-            order: 0,
-          },
+            order: 0
+          }
         }).state('management.goal', {
           url: '/goal',
-          // templateUrl: 'app/pages/laws/nationLaws/nationLaws.html',
+          templateUrl: 'app/pages/management/goal/goal.html',
           title: '企业目标计划',
 
           sidebarMeta: {
-            order: 100,
-          },
+            order: 100
+          }
         }).state('management.Deptgoal', {
           url: '/Deptgoal',
-          // templateUrl: 'app/pages/laws/nationLaws/nationLaws.html',
+          templateUrl: 'app/pages/management/Deptgoal/deptgoal.html',
           title: '部门目标计划',
           sidebarMeta: {
-            order: 101,
-          },
+            order: 101
+          }
         });
         // 默认显示
     $urlRouterProvider.when('/management','/management/safe');

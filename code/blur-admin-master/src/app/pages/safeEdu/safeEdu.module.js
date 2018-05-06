@@ -13,18 +13,19 @@
     $stateProvider
         .state('safeEdu', {
           url: '/safeEdu',
-          // templateUrl: 'app/pages/maps/maps.html',
+          template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
+          controller : "safeEduPageCtrl",
           abstract: true,
           title: '安全教育',
           sidebarMeta: {
-            icon: 'ion-ios-location-outline',
+            icon: 'ion-university',
             order: 500,
           },
         })
         .state('safeEdu.inner', {
           url: '/inner',
-          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
-          // controller: 'GmapPageCtrl',
+          templateUrl: 'app/pages/safeEdu/inner/inner.html',
+          // controller: 'PageCtrl',
           title: '内部培训',
           sidebarMeta: {
             order: 0,
@@ -42,7 +43,7 @@
         })
         .state('safeEdu.edu', {
           url: '/edu',
-          // templateUrl: 'app/pages/maps/map-bubbles/map-bubbles.html',
+          templateUrl: 'app/pages/safeEdu/edu/edu.html',
           // controller: 'MapBubblePageCtrl',
           title: '教育培训',
           sidebarMeta: {

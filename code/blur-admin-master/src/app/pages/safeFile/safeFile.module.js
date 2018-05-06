@@ -13,17 +13,18 @@
     $stateProvider
         .state('safeFile', {
           url: '/safeFile',
-          // templateUrl: 'app/pages/maps/maps.html',
+          template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
+          controller:"safeFilePageCtrl",
           abstract: true,
           title: '安全档案',
           sidebarMeta: {
-            icon: 'ion-ios-location-outline',
+            icon: 'ion-ios-folder-outline',
             order: 500,
           },
         })
         .state('safeFile.three', {
           url: '/three',
-          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
+          templateUrl: 'app/pages/safeFile/three/three.html',
           // controller: 'GmapPageCtrl',
           title: '三同时管理',
           sidebarMeta: {
@@ -31,9 +32,9 @@
           },
          
         })
-        .state('orsafeFile.risk', {
+        .state('safeFile.risk', {
           url: '/risk',
-          // templateUrl: 'app/pages/maps/leaflet/leaflet.html',
+          templateUrl: 'app/pages/safeFile/risk/risk.html',
           // controller: 'LeafletPageCtrl',
           title: '安全风险管理',
           sidebarMeta: {
@@ -42,7 +43,7 @@
         })
         .state('safeFile.fix', {
           url: '/fix',
-          // templateUrl: 'app/pages/maps/map-bubbles/map-bubbles.html',
+          templateUrl: 'app/pages/safeFile/fix/fix.html',
           // controller: 'MapBubblePageCtrl',
           title: '检维修管理',
           sidebarMeta: {

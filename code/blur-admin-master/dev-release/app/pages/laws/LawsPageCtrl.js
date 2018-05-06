@@ -132,7 +132,13 @@
       $('#editContent')
       );
     };
-
+    // 跳转删除页面
+      $scope.editLaw = function(){
+          // $location.path();
+          console.log(
+              $('#editContent')
+          );
+      };
     
     editableOptions.theme = 'bs3';
     editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
