@@ -8,13 +8,13 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
     // 看板首页
-    'BlurAdmin.pages.dashboard',
+    // 'BlurAdmin.pages.dashboard',
 
     // 'BlurAdmin.pages.kar98',
-    'BlurAdmin.pages.ui',
+    // 'BlurAdmin.pages.ui',
     // 'BlurAdmin.pages.components',
     // 表单控件
-    'BlurAdmin.pages.form',
+    // 'BlurAdmin.pages.form',
     // 'BlurAdmin.pages.tables',
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
