@@ -58,8 +58,8 @@
     'BlurAdmin.pages.delegation',
     // 持续改进
     'BlurAdmin.pages.perfection'
-  ])
-      .config(routeConfig);
+  ]);
+      // .config(routeConfig);
 
   /** @ngInject */
   // function routeConfig($urlRouterProvider, baSidebarServiceProvider) {

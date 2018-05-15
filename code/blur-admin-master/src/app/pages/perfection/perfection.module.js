@@ -13,7 +13,7 @@
     $stateProvider
         .state('perfection', {
           url: '/perfection',
-          // templateUrl: 'app/pages/maps/maps.html',
+          template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           title: '持续改进',
           sidebarMeta: {
@@ -23,9 +23,9 @@
         })
         .state('perfection.contribution', {
           url: '/contribution',
-          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
-          // controller: 'GmapPageCtrl',
-          title: '安委会',
+          templateUrl: 'app/pages/perfection/contribution/contribution.html',
+          controller: 'perfectionPageCtrl',
+          title: '绩效评定',
           sidebarMeta: {
             order: 0,
           },

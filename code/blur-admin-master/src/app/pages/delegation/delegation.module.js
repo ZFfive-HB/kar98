@@ -15,7 +15,7 @@
           url: '/delegation',
           abstract:true,
           title: '外委单位管理',
-          template: '1111',
+          template: '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
@@ -25,8 +25,8 @@
           url: '/aptitude',
           // abstract:true,
           title: '资质管理',
-          // templateUrl: 'app/pages/profile/profile.html',
-          // controller: 'ProfilePageCtrl',
+          templateUrl: 'app/pages/delegation/aptitude/aptitude.html',
+          controller: 'delegationPageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
             order: 300
@@ -75,16 +75,6 @@
           url: '/supervise',
           abstract:true,
           title: '监督检查情况',
-          // templateUrl: 'app/pages/profile/profile.html',
-          // controller: 'ProfilePageCtrl',
-          sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
-          }
-        }).state('delegation.radiation', {
-          url: '/delegation',
-          abstract:true,
-          title: '外委单位管理',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
