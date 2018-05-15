@@ -1,6 +1,6 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author Bruce
+ * created on 2018
  */
 (function () {
   'use strict';
@@ -54,49 +54,53 @@
     'BlurAdmin.pages.evaluate',
     // 风险应急管理
     'BlurAdmin.pages.emergency',
+    // 外委管理
+    'BlurAdmin.pages.delegation',
+    // 持续改进
+    'BlurAdmin.pages.perfection'
   ])
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
-    // 静态页面
-    baSidebarServiceProvider.addStaticItem({
-      title: '基础页面',
-      icon: 'ion-document',
-      subMenu: [
-      //   {
-      //   title: '登录',
-      //   fixedHref: 'auth.html',
-      //   blank: true
-      // },
-       {
-        title: '注册/登录',
-        fixedHref: 'reg.html',
-        blank: true
-      }, {
-        title: '个人信息设置',
-        stateRef: 'profile',
-      }, {
-        title: '404 Page',
-        fixedHref: '404.html',
-        blank: true
-      }]
-    });
-    // baSidebarServiceProvider.addStaticItem({
-    //   title: 'Menu Level 1',
-    //   icon: 'ion-ios-more',
-    //   subMenu: [{
-    //     title: 'Menu Level 1.1',
-    //     disabled: true
-    //   }, {
-    //     title: 'Menu Level 1.2',
-    //     subMenu: [{
-    //       title: 'Menu Level 1.2.1',
-    //       disabled: true
-    //     }]
-    //   }]
-    // });
-  }
+  // function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
+  //   $urlRouterProvider.otherwise('/dashboard');
+  //   // 静态页面
+  //   baSidebarServiceProvider.addStaticItem({
+  //     title: '基础页面',
+  //     icon: 'ion-document',
+  //     subMenu: [
+  //     //   {
+  //     //   title: '登录',
+  //     //   fixedHref: 'auth.html',
+  //     //   blank: true
+  //     // },
+  //      {
+  //       title: '注册/登录',
+  //       fixedHref: 'reg.html',
+  //       blank: true
+  //     }, {
+  //       title: '个人信息设置',
+  //       stateRef: 'profile',
+  //     }, {
+  //       title: '404 Page',
+  //       fixedHref: '404.html',
+  //       blank: true
+  //     }]
+  //   });
+  //   // baSidebarServiceProvider.addStaticItem({
+  //   //   title: 'Menu Level 1',
+  //   //   icon: 'ion-ios-more',
+  //   //   subMenu: [{
+  //   //     title: 'Menu Level 1.1',
+  //   //     disabled: true
+  //   //   }, {
+  //   //     title: 'Menu Level 1.2',
+  //   //     subMenu: [{
+  //   //       title: 'Menu Level 1.2.1',
+  //   //       disabled: true
+  //   //     }]
+  //   //   }]
+  //   // });
+  // }
 
 })();

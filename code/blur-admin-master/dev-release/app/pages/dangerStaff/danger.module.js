@@ -17,6 +17,10 @@
           title: '危险物品管理',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         });
   }
 

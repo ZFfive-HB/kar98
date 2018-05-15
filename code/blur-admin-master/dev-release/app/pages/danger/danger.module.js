@@ -17,26 +17,46 @@
           title: '危险作业管理',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         }).state('danger.fire', {
           url: '/fire',
           title: '动火作业',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         }).state('danger.hight', {
           url: '/hight',
           title: '高处作业',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         }).state('danger.special', {
           url: '/special',
           title: '特种设备作业',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         }).state('danger.limited', {
           url: '/limited',
           title: '有限空间作业',
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         });
   }
 
