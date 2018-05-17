@@ -42,7 +42,7 @@
         }).state('danger.special', {
           url: '/special',
           title: '特种设备作业',
-          // templateUrl: 'app/pages/profile/profile.html',
+           templateUrl: 'app/pages/danger/special/special.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',

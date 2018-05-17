@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="add-row-editable-table">
+      <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/delegation/aptitude/addPage.html', 'lg')">添加企业</button>
+    </div>
+    <table class="table table-bordered table-hover table-condensed">
+      <tr>
+        <td></td>
+        <td>报告编号</td>
+        <td>报告名称</td>
+        <td>检测结论</td>
+        <td>经办部门</td>
+        <td>经办人员</td>
+        <td>报告摘要</td>
+        <td>制单人名</td>
+        <td>制单日期</td>
+        <td>设备类别</td>
+        <td>是否外委</td>
+        <td>操作</td>
+      </tr>
+      <tr ng-repeat="data in specialDatas" class="editable-row">
+        <td>
+          {{$index + 1}}
+        </td>
+        <td>
+          <span editable-text="data.num" e-name="name" e-required>
+            {{ data.num || '空' }}
+          </span>
+        </td>
+        <td>
+          <span editable-text="data.name" e-name="name" e-required>
+            {{ data.name || '空' }}
+          </span>
+        </td>
+        <td>
+          <span editable-text="data.concluson" e-name="name" e-form="rowform" e-required>
+            {{ data.concluson || '空' }}
+          </span>
+        </td>
+        <td class="select-td">
+          <span editable-select="data.apartment" e-name="status" e-form="rowform">
+            {{ data.apartment }}
+          </span>
+        </td>
+        <td class="select-td">
+          <span editable-select="data.persion" e-name="status" e-form="rowform">
+            {{ data.persion }}
+          </span>
+        </td>
+        <td class="select-td">
+          <span editable-select="data.summary" e-name="group" onshow="loadGroups()" e-form="rowform">
+            {{ data.summary }}
+          </span>
+        </td>
+        <td class="select-td">
+          <span editable-select="data.madeName" e-name="group" onshow="loadGroups()" e-form="rowform">
+            {{ data.madeName }}
+          </span>
+        </td>
+        <td class="select-td">
+            <span editable-select="data.madeDate" e-name="group" onshow="loadGroups()" e-form="rowform">
+              {{ data.madeDate }}
+            </span>
+          </td>
+          <td class="select-td">
+            <span editable-select="data.category" e-name="group" onshow="loadGroups()" e-form="rowform">
+              {{ data.category }}
+            </span>
+          </td>
+          <td class="select-td">
+            <span editable-select="data.isOrNo" e-name="group" onshow="loadGroups()" e-form="rowform">
+              {{ data.isOrNo }}
+            </span>
+          </td>
+          <td>
+            <div class="buttons" ng-show="!rowform.$visible">
+                <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">编辑</button>
+                <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button>
+            </div>
+          </td>
+        </td>
+      </tr>
+    </table>
+  </div>

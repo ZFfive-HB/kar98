@@ -29,7 +29,8 @@
         guardian: '张三',
         strus : '正常'
       },
-    ]
+    ];
+    // 高处作业
     $scope.hightDatas = [
       {
         id:'1',
@@ -41,7 +42,24 @@
         date: '2018/09/09',
         strus : '正常'
       },
-    ]
+    ];
+    // 特种设备作业
+    $scope.specialDatas = [
+      {
+        id:'1',
+        num:'LY009123',
+        name : '臭徐建',
+        concluson : '检测结论',
+        apartment : '经办部门',
+        persion:'经办人员',
+        summary: '报告摘要',
+        madeName : '制单人名',
+        madeDate : '制单日期',
+        category : '设备类别',
+        isOrNo : '是否外委',
+        strus : '操作'
+      },
+    ];
    
   
   
