@@ -1,56 +1,63 @@
 <div class="row">
   <div class="add-row-editable-table">
-    <button class="btn btn-primary" data-toggle="modal" ng-click="open('', 'lg')">添加考核</button>
+    <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/delegation/aptitude/addPage.html', 'lg')">添加企业</button>
   </div>
   <table class="table table-bordered table-hover table-condensed">
     <tr>
       <td></td>
+      <td>编号</td>
+      <td>申请部门</td>
+      <td>动火地点</td>
+      <td>动火原因</td>
+      <td>动火期限</td>
+      <td>经办人手机</td>
+      <td>现场操作人员</td>
+      <td>安全监护人</td>
       <td>状态</td>
-      <td>考评编号</td>
-      <td>考评名称</td>
-      <td>开始时间</td>
-      <td>完成期限</td>
-      <td>考核部门</td>
-      <td>考核组长</td>
       <td>操作</td>
     </tr>
-    <tr ng-repeat="qyzz in contributionData" class="editable-row">
+    <tr ng-repeat="data in fireDatas" class="editable-row">
       <td>
-        {{$index+1}}
+        {{$index + 1}}
       </td>
       <td>
-        <span editable-text="qyzz.stus" e-name="name" e-form="rowform" e-required>
-          {{ qyzz.stus || '空' }}
+        <span editable-text="data.num" e-name="name" e-form="rowform" e-required>
+          {{ data.num || '空' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="data.addr" e-name="name" e-form="rowform" e-required>
+          {{ data.addr || '空' }}
         </span>
       </td>
       <td class="select-td">
-        <span editable-select="qyzz.num" e-name="status" e-form="rowform">
-          {{ qyzz.num }}
+        <span editable-select="data.reason" e-name="status" e-form="rowform">
+          {{ data.reason }}
         </span>
       </td>
       <td class="select-td">
-        <span editable-select="qyzz.name" e-name="status" e-form="rowform">
-          {{ qyzz.name }}
+        <span editable-select="data.deadline" e-name="status" e-form="rowform">
+          {{ data.deadline }}
         </span>
       </td>
       <td class="select-td">
-        <span editable-select="qyzz.start" e-name="group" onshow="loadGroups()" e-form="rowform">
-          {{ qyzz.start }}
+        <span editable-select="data.phone" e-name="group" onshow="loadGroups()" e-form="rowform">
+          {{ data.phone }}
         </span>
       </td>
       <td class="select-td">
-        <span editable-select="qyzz.deadline" e-name="group" onshow="loadGroups()" e-form="rowform">
-          {{ qyzz.deadline }}
+        <span editable-select="data.opeater" e-name="group" onshow="loadGroups()" e-form="rowform">
+          {{ data.opeater }}
         </span>
       </td>
       <td class="select-td">
         <span e-name="group" onshow="loadGroups()" e-form="rowform">
-          {{ qyzz.dept }}
+          {{ data.guardian }}
         </span>
       </td>
       <td class="select-td">
         <span e-name="group" onshow="loadGroups()" e-form="rowform">
-          {{ qyzz.major }}
+          {{ data.strus }}
         </span>
       </td>
       <td>
