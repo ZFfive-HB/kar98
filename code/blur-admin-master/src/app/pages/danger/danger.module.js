@@ -33,7 +33,7 @@
         }).state('danger.hight', {
           url: '/hight',
           title: '高处作业',
-          templateUrl: 'app/pages/danger/height/height.html',
+          templateUrl: 'app/pages/danger/hight/hight.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
@@ -51,7 +51,7 @@
         }).state('danger.limited', {
           url: '/limited',
           title: '有限空间作业',
-          // templateUrl: 'app/pages/profile/profile.html',
+          templateUrl: 'app/pages/danger/limited/limited.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
