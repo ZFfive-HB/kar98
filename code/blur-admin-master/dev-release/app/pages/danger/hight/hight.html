@@ -1,12 +1,11 @@
 <div class="row">
     <div class="add-row-editable-table">
-      <button class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/delegation/aptitude/addPage.html', 'lg')">添加企业</button>
+      <button class="btn btn-primary" data-toggle="modal" ng-click="open('', 'lg')">添加企业</button>
     </div>
     <table class="table table-bordered table-hover table-condensed">
       <tr>
         <td></td>
         <td>编号</td>
-        <td>申请部门</td>
         <td>作业高度</td>
         <td>作业地点</td>
         <td>申请部门</td>
@@ -15,7 +14,7 @@
         <td>状态</td>
         <td>操作</td>
       </tr>
-      <tr ng-repeat="data in fireDatas" class="editable-row">
+      <tr ng-repeat="data in hightDatas" class="editable-row">
         <td>
           {{$index + 1}}
         </td>
@@ -25,33 +24,28 @@
           </span>
         </td>
         <td>
-          <span editable-text="data.addr" e-name="name" e-form="rowform" e-required>
-            {{ data.addr || '空' }}
+          <span editable-text="data.height" e-name="name" e-form="rowform" e-required>
+            {{ data.height || '空' }}
           </span>
         </td>
         <td class="select-td">
-          <span editable-select="data.reason" e-name="status" e-form="rowform">
-            {{ data.reason }}
+          <span editable-select="data.addr" e-name="status" e-form="rowform">
+            {{ data.addr }}
           </span>
         </td>
         <td class="select-td">
-          <span editable-select="data.deadline" e-name="status" e-form="rowform">
-            {{ data.deadline }}
+          <span editable-select="data.dept" e-name="status" e-form="rowform">
+            {{ data.dept }}
           </span>
         </td>
         <td class="select-td">
-          <span editable-select="data.phone" e-name="group" onshow="loadGroups()" e-form="rowform">
-            {{ data.phone }}
+          <span editable-select="data.persion" e-name="group" onshow="loadGroups()" e-form="rowform">
+            {{ data.persion }}
           </span>
         </td>
         <td class="select-td">
-          <span editable-select="data.opeater" e-name="group" onshow="loadGroups()" e-form="rowform">
-            {{ data.opeater }}
-          </span>
-        </td>
-        <td class="select-td">
-          <span e-name="group" onshow="loadGroups()" e-form="rowform">
-            {{ data.guardian }}
+          <span editable-select="data.date" e-name="group" onshow="loadGroups()" e-form="rowform">
+            {{ data.date }}
           </span>
         </td>
         <td class="select-td">
@@ -60,7 +54,7 @@
           </span>
         </td>
         <td>
-          <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == qyzz">
+          <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == data">
             <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
               保存
             </button>

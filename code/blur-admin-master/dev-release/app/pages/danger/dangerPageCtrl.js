@@ -20,6 +20,7 @@
       {
         id:'1',
         num:'LY009123',
+        dept: '大修厂',
         addr:'大修厂第五车间',
         reason : '焊接',
         deadline : '2018-09-01',
@@ -33,12 +34,11 @@
       {
         id:'1',
         num:'LY009123',
-        dept:'大修厂第五车间',
-        reason : '焊接',
-        deadline : '2018-09-01',
-        phone : '19800902983',
-        opeater:'王小丫',
-        guardian: '张三',
+        height : '291',
+        addr : '厂房外部',
+        dept : '焊接厂',
+        persion:'王小丫',
+        date: '2018/09/09',
         strus : '正常'
       },
     ]
@@ -48,8 +48,8 @@
     $scope.showGroup = function(user) {
       if(user.group && $scope.groups.length) {
         var selected = $filter('filter')($scope.groups, {id: user.group});
-        return selected.length ? selected[0].text : 'Not set';
-      } else return 'Not set'
+        return selected.length ? selected[0].text : '未填写';
+      } else return '未填写'
     };
 
     $scope.showStatus = function(user) {

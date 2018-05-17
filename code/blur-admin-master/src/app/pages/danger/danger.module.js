@@ -1,6 +1,6 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author Bruce
+ * created on 2018.05.15
  */
 (function () {
   'use strict';
@@ -33,7 +33,7 @@
         }).state('danger.hight', {
           url: '/hight',
           title: '高处作业',
-          // templateUrl: 'app/pages/profile/profile.html',
+          templateUrl: 'app/pages/danger/height/height.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',

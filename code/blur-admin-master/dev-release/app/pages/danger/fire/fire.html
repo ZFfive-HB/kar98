@@ -21,8 +21,13 @@
         {{$index + 1}}
       </td>
       <td>
-        <span editable-text="data.num" e-name="name" e-form="rowform" e-required>
+        <span editable-text="data.num" e-name="name" e-required>
           {{ data.num || '空' }}
+        </span>
+      </td>
+      <td>
+        <span editable-text="data.dept" e-name="name" e-required>
+          {{ data.dept || '空' }}
         </span>
       </td>
       <td>
@@ -61,7 +66,7 @@
         </span>
       </td>
       <td>
-        <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == qyzz">
+        <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == data">
           <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
             保存
           </button>
