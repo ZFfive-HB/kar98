@@ -18,7 +18,7 @@
           title: '特种设备管理',
           sidebarMeta: {
             icon: 'ion-hammer',
-            order: 500,
+            order: 700,
           },
         }).state('special.monitor', {
           url: '/monitor',

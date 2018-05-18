@@ -18,8 +18,8 @@
           template: '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           controller: 'dangerPageCtrl',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
+            icon: 'fa fa-wrench',
+            order: 700
           }
         }).state('danger.fire', {
           url: '/fire',

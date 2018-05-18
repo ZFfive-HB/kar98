@@ -11,7 +11,7 @@
     // 'BlurAdmin.pages.dashboard',
 
     // 'BlurAdmin.pages.kar98',
-    // 'BlurAdmin.pages.ui',
+    'BlurAdmin.pages.ui',
     // 'BlurAdmin.pages.components',
     // 表单控件
     // 'BlurAdmin.pages.form',
@@ -33,7 +33,7 @@
     // 安全档案
     'BlurAdmin.pages.safeFile',
     // 外委企业管理
-    'BlurAdmin.pages.commission',
+    // 'BlurAdmin.pages.commission',
     // 危险作业管理
     'BlurAdmin.pages.danger',
     // 普通作业管理

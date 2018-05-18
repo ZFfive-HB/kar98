@@ -20,7 +20,7 @@
           controller:'securityPageCtrl',
           sidebarMeta: {
             icon: 'ion-qr-scanner',
-            order: 500,
+            order: 1000,
           },
         })
         .state('security.account', {

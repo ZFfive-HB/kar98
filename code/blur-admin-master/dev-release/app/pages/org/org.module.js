@@ -18,7 +18,7 @@
           title: '组织机构',
           sidebarMeta: {
             icon: 'ion-ios-location-outline',
-            order: 500,
+            order: 300,
           },
         })
         .state('org.org', {

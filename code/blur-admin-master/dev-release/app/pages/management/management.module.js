@@ -18,8 +18,8 @@
           controller: 'managementPageCtrl',
           title: '企业管理制度',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
+            icon: 'fa fa-building-o',
+            order: 200
           }
         }).state('management.safe', {
           url: '/safe',

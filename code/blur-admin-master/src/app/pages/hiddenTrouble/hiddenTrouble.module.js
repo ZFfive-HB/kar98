@@ -18,8 +18,8 @@
           // controller: 'LawsPageCtrl',
           title: '事故隐患处理',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300,
+            icon: 'fa fa-eye-slash',
+            order: 1100,
           },
         }).state('hiddenTrouble.rule', {
           url: '/rule',

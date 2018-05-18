@@ -18,8 +18,8 @@
           // controller: 'LawsPageCtrl',
           title: '重大危险源管理',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300,
+            icon: 'ion-nuclear',
+            order: 800,
           },
         }).state('majorDanger.info', {
           invisable:true,

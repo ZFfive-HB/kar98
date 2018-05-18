@@ -10,6 +10,7 @@
 
   /** @ngInject */
   function NotificationsCtrl($scope, toastr) {
+    // console.log(toastr);
     $scope.showSuccessMsg = function() {
       toastr.success('Your information has been saved successfully!');
     };

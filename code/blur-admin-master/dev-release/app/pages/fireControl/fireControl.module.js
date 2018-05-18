@@ -18,8 +18,8 @@
           controller: 'fireControlPageCtrl',
           title: '消防设施管理',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300,
+            icon: 'fa fa-fire',
+            order: 900,
           },
         }).state('fireControl.account', {
           invisable:true,

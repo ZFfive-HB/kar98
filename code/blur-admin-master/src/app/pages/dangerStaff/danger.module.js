@@ -18,8 +18,8 @@
           // templateUrl: 'app/pages/profile/profile.html',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
+            icon: 'fa fa-warning',
+            order: 800
           }
         });
   }

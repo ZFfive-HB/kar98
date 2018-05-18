@@ -18,8 +18,8 @@
           controller: 'LawsPageCtrl',
           title: '安全生产法律法规',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
+            icon: 'ion-map',
+            order: 100
           }
         }).state('laws.nationLaws', {
           invisable:true,

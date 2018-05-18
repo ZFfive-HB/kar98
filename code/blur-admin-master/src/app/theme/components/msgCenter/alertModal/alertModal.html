@@ -1,0 +1,38 @@
+<div class="modal-content" ng-controller="MsgCenterCtrl">
+    <div class="modal-header bg-danger">
+        <i class="ion-flame modal-icon"></i>
+        <span>报警信息</span>
+    </div>
+    <div class="modal-body text-center">
+        <form ng-submit="saveData(data)" >
+            <div class="col-md-12 form-group">
+                <span for="" class="col-sm-6 control-label">选择事故发生地点:</span>
+                <div class="col-sm-6">
+                    <select class="form-control" selectpicker ng-model="data.addr">
+                        <option>企管分部</option>
+                        <option>技术分部</option>
+                        <option>安建分部</option>
+                        <option>其它</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-md-12 form-group">
+                <span for="" class="col-sm-6 control-label">简单描述:</span>
+                <div class="col-md-6 col-sm-6">
+                    <input 
+                            type="text" 
+                            class="form-control" 
+                            id="inputOccupation" 
+                            placeholder="什么事故..." 
+                            ng-model="data.context">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger">报警</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <!-- <button type="submit" class="btn btn-danger">报警</button> -->
+        <button type="button" class="btn btn-info" ng-click="$dismiss()">放弃报警</button>
+    </div>
+</div>

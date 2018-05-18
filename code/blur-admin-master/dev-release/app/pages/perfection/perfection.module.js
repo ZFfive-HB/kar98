@@ -18,7 +18,7 @@
           title: '持续改进',
           sidebarMeta: {
             icon: 'ion-ios-location-outline',
-            order: 500,
+            order: 1400,
           },
         })
         .state('perfection.contribution', {

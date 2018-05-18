@@ -19,7 +19,7 @@
           title: '安全教育',
           sidebarMeta: {
             icon: 'ion-university',
-            order: 500,
+            order: 400,
           },
         })
         .state('safeEdu.inner', {

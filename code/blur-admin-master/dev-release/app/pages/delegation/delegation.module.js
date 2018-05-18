@@ -18,8 +18,8 @@
           template: '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           // controller: 'ProfilePageCtrl',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300
+            icon: 'ion-log-out',
+            order: 600
           }
         }).state('delegation.aptitude', {
           url: '/aptitude',

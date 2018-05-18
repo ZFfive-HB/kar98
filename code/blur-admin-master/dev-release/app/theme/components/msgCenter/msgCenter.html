@@ -1,10 +1,35 @@
 <ul class="al-msg-center clearfix">
+  <!-- 重大事件报警 -->
   <li uib-dropdown>
-    <a href uib-dropdown-toggle>
-      <i class="fa fa-bell-o"></i><span>5</span>
+    <a href uib-dropdown-toggle class="fire-danger" data-toggle="modal" ng-click="open('app/theme/components/msgCenter/alertModal/alertModal.html')">
+      <i class="fa fa-bell-o"></i><span>1</span>
 
       <div class="notification-ring"></div>
     </a>
+    <!-- <div uib-dropdown-menu class="top-dropdown-menu">
+      <i class="dropdown-arr"></i>
+      <div class="header clearfix">
+        <strong>报警信息</strong>
+      </div>
+      <div class="msg-list">
+        <a href class="clearfix" ng-repeat="msg in messages">
+          <div class="img-area"><img class="photo-msg-item" ng-src="{{::( msg.img | profilePicture )}}"></div>
+          <div class="msg-area">
+            <div>{{ msg.text }}</div>
+            <span>{{ msg.time }}</span>
+          </div>
+        </a>
+      </div>
+      <a href>其它报警事项</a>
+    </div> -->
+  </li>
+  <!-- 消息提醒 -->
+  <li uib-dropdown>
+    <a href class="msg" uib-dropdown-toggle>
+      <i class="fa fa-envelope-o"></i><span>5</span>
+      <div class="notification-ring"></div>
+    </a>
+  
 
     <div uib-dropdown-menu class="top-dropdown-menu">
       <i class="dropdown-arr"></i>
@@ -28,29 +53,4 @@
       <a href>显示全部代办事项</a>
     </div>
   </li>
-  <!-- 消息提醒 -->
-  <!-- <li uib-dropdown>
-    <a href class="msg" uib-dropdown-toggle>
-      <i class="fa fa-envelope-o"></i><span>5</span>
-      <div class="notification-ring"></div>
-    </a>
-    <div uib-dropdown-menu class="top-dropdown-menu">
-      <i class="dropdown-arr"></i>
-      <div class="header clearfix">
-        <strong>Messages</strong>
-        <a href>Mark All as Read</a>
-        <a href>Settings</a>
-      </div>
-      <div class="msg-list">
-        <a href class="clearfix" ng-repeat="msg in messages">
-          <div class="img-area"><img class="photo-msg-item" ng-src="{{::( users[msg.userId].name | profilePicture )}}"></div>
-          <div class="msg-area">
-            <div>{{ msg.text }}</div>
-            <span>{{ msg.time }}</span>
-          </div>
-        </a>
-      </div>
-      <a href>See all messages</a>
-    </div>
-  </li> -->
 </ul>

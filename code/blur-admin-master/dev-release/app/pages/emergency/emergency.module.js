@@ -18,8 +18,8 @@
           // controller: 'LawsPageCtrl',
           title: '风险应急管理',
           sidebarMeta: {
-            icon: 'ion-grid',
-            order: 300,
+            icon: 'ion-battery-charging',
+            order: 1300,
           },
         }).state('emergency.sys', {
           url: '/sys',
