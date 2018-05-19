@@ -8,10 +8,10 @@
   angular.module('BlurAdmin.pages', [
     'ui.router',
     // 看板首页
-    // 'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.dashboard',
 
     // 'BlurAdmin.pages.kar98',
-    'BlurAdmin.pages.ui',
+    // 'BlurAdmin.pages.ui',
     // 'BlurAdmin.pages.components',
     // 表单控件
     // 'BlurAdmin.pages.form',
@@ -58,12 +58,12 @@
     'BlurAdmin.pages.delegation',
     // 持续改进
     'BlurAdmin.pages.perfection'
-  ]);
-      // .config(routeConfig);
+  ])
+      .config(routeConfig);
 
   /** @ngInject */
-  // function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-  //   $urlRouterProvider.otherwise('/dashboard');
+  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
+    $urlRouterProvider.otherwise('/dashboard');
   //   // 静态页面
   //   baSidebarServiceProvider.addStaticItem({
   //     title: '基础页面',
@@ -101,6 +101,6 @@
   //   //     }]
   //   //   }]
   //   // });
-  // }
+  }
 
 })();

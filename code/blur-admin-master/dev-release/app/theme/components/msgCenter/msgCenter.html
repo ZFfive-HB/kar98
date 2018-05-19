@@ -1,8 +1,10 @@
 <ul class="al-msg-center clearfix">
   <!-- 重大事件报警 -->
   <li uib-dropdown>
-    <a href uib-dropdown-toggle class="fire-danger" data-toggle="modal" ng-click="open('app/theme/components/msgCenter/alertModal/alertModal.html')">
-      <i class="fa fa-bell-o"></i><span>1</span>
+    <a href uib-dropdown-toggle class="fire-danger" data-toggle="modal" 
+    ng-click="open('app/theme/components/msgCenter/alertModal/alertModal.html')"> 
+      <i class="fa fa-bell-o"></i><span  ng-if="alertShow" ng-mode = "alertNum">{{alertNum}}</span>
+      <!-- <span>1</span> -->
 
       <div class="notification-ring"></div>
     </a>
