@@ -13,16 +13,86 @@
       $scope.smartTablePageSize = 10;
   
       $scope.threeTableData = [
-          {
-              id : "1",
-              proName:"国家2007年三同时执行标准",
-              level : "一级",
-              date : "2008-02-11",
-              dept : "安全保卫科",
-              stage : "实施"
-
-
-          }
+        {
+            id : "1",
+            proName:"国家2007年三同时执行标准",
+            level : "一级",
+            date : "2008-02-11",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "2",
+            proName:"省级2005年一同时执行标准",
+            level : "二级",
+            date : "2006-04-01",
+            dept : "生产科",
+            stage : "生产"
+        },
+        {
+            id : "3",
+            proName:"省级2012年三同时执行标准",
+            level : "二级",
+            date : "2015-06-10",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "4",
+            proName:"国家2000年执行标准",
+            level : "一级",
+            date : "2001-11-11",
+            dept : "生产科",
+            stage : "生产"
+        },
+        {
+            id : "5",
+            proName:"国家2007年三同时执行标准",
+            level : "一级",
+            date : "2008-02-01",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "6",
+            proName:"省级2009年执行标准",
+            level : "二级",
+            date : "2014-09-11",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "7",
+            proName:"国家2007年三同时执行标准",
+            level : "一级",
+            date : "2011-02-11",
+            dept : "生产科",
+            stage : "生产"
+        },
+        {
+            id : "8",
+            proName:"国家2001年三同时执行标准",
+            level : "一级",
+            date : "2002-02-11",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "9",
+            proName:"省级2017年执行标准",
+            level : "二级",
+            date : "2018-02-11",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
+        {
+            id : "10",
+            proName:"国家2007年三同时执行标准",
+            level : "一级",
+            date : "2008-02-11",
+            dept : "安全保卫科",
+            stage : "实施"
+        },
       ];
       $scope.fixTableData = [
         {
