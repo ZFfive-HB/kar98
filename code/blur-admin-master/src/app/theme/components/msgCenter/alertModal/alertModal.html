@@ -1,4 +1,4 @@
-<div class="modal-content" ng-controller="MsgCenterCtrl">
+<div class="modal-content" ng-controller="alertModalCtrl">
     <div class="modal-header bg-danger">
         <i class="ion-flame modal-icon"></i>
         <span>报警信息</span>
@@ -8,7 +8,7 @@
             <div class="col-md-12 form-group">
                 <span for="" class="col-sm-6 control-label">选择事故发生地点:</span>
                 <div class="col-sm-6">
-                    <select class="form-control" selectpicker ng-model="data.addr">
+                    <select class="form-control" selectpicker ng-model="data.addr" required>
                         <option>企管分部</option>
                         <option>技术分部</option>
                         <option>安建分部</option>
@@ -25,7 +25,8 @@
                             class="form-control" 
                             id="inputOccupation" 
                             placeholder="什么事故..." 
-                            ng-model="data.context">
+                            ng-model="data.context"
+                            required>
                 </div>
             </div>
             <button type="submit" class="btn btn-danger">报警</button>

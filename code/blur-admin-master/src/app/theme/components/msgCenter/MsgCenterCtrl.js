@@ -1,6 +1,6 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author Bruce
+ * created on 2018.05.19
  */
 (function () {
   'use strict';
@@ -9,7 +9,7 @@
     .controller('MsgCenterCtrl', MsgCenterCtrl);
 
   /** @ngInject */
-  function MsgCenterCtrl($scope, $sce, $uibModal,toastr) {
+  function MsgCenterCtrl($scope, $sce, $rootScope, $uibModal, toastr, msgCenter) {
     $scope.users = {
       0: {
         name: 'safeLogo',
@@ -92,42 +92,20 @@
         }
       });
     };
-    // 报警按钮逻辑
-    var alertMsg = []; //保存报警信息
-    $scope.data = {}; //表单信息
-    var alertNum = 0; //报警的数量
-    $scope.saveData = function () {
-      // 保存数据
-      alertMsg.push($scope.data);
-      // 添加报警次数
-      alertNum += 1;
-      // 应用内置函数关闭窗口
-      this.$dismiss();
-      // 首页提示信息
-      showAlert($scope.data);
-
-    };
-
-    // 首页提示信息
-    var showAlert = function () {
-      // 每次报警后需要重新触发所有报警
-      let i = 0;
-      // 初始化页面时候检查书否有报警信息
-      if (alertMsg != undefined || alertMsg.length != 0) {
-        while (i < alertNum) {
-          var addr = alertMsg[i].addr;
-          var text = alertMsg[i].context;
-          showErrorMsg(addr,text);
-          i += 1;
-        };
-      }
-
+    // 初始化报警数量
+    $scope.alertNum = msgCenter.msg.length;
+    if($scope.alertNum == 0){
+      $scope.alertShow = false;
+    }else{
+      $scope.alertShow = true;
     }
-
-    // 弹出提示窗方法
-    var showErrorMsg = function(addr,text) {
-      toastr.error(text, addr+'发生火警');
-    };
-    // $scope.openProgressDialog = baProgressModal.open;
+    // 接收报警信息
+    $scope.$on('num',function(){
+        //更新数据 
+      $scope.alertNum = msgCenter.msg.length;
+        // 显示提示
+      $scope.alertShow = true;
+    });
+    
   }
 })();
