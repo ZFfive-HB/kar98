@@ -9,7 +9,7 @@
       .config(routeConfig)
       .config(function(){
         $.jstree.defaults.core.themes.url = true;
-        $.jstree.defaults.core.themes.dir = "assets/img/theme/vendor/jstree/dist/themes";
+        // $.jstree.defaults.core.themes.dir = "assets/img/theme/vendor/jstree/dist/themes";
       });
 
   /** @ngInject */
@@ -29,7 +29,7 @@
           url: '/org',
           templateUrl: 'app/pages/org/org/org.html',
           controller: 'orgPageCtrl',
-          title: '安委会',
+          title: '厂区人员角色',
           sidebarMeta: {
             order: 0,
           },

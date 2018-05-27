@@ -57,6 +57,15 @@
             icon: 'ion-grid',
             order: 300
           }
+        }) .state('danger.fireApply', {
+          url: '/fireApply',
+          title: '动火作业申请',
+          templateUrl: 'app/pages/danger/fireApply/apply.html',
+          controller: 'fireApplyPageCtrl',
+          sidebarMeta: {
+            icon: 'ion-grid',
+            order: 300
+          }
         });
   }
 
