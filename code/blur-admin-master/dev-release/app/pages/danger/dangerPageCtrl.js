@@ -449,8 +449,8 @@
         strus : '正常'
       },
     ];
-   
-  
+    
+    // $scope.dd = '确认';
   
     $scope.showGroup = function(user) {
       if(user.group && $scope.groups.length) {
@@ -488,6 +488,8 @@
 
     // 添加页面
     $scope.open = function (page, size) {
+      alert(111);
+      console.log(1111);
       $uibModal.open({
         animation: true,
         templateUrl: page,
@@ -500,7 +502,7 @@
       });
     };
     $scope.openProgressDialog = baProgressModal.open;
-
+    
   }
 
 })();

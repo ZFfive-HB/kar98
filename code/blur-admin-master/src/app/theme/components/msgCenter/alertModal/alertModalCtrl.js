@@ -19,7 +19,7 @@
         msgCenter.msg.push($scope.data);
         // 更新报警数量
         msgCenter.countNum = msgCenter.msg.length;
-        // // 应用内置函数关闭窗口
+         // 应用内置函数关闭窗口
         this.$dismiss();
         // 首页提示信息
         msgCenter.showAlert();

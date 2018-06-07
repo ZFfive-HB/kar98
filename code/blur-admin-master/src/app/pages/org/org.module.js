@@ -1,19 +1,23 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author Bruce
+ * created on 2018.5.20
  */
 (function () {
   'use strict';
 
   angular.module('BlurAdmin.pages.org', [])
-      .config(routeConfig);
+      .config(routeConfig)
+      .config(function(){
+        $.jstree.defaults.core.themes.url = true;
+        // $.jstree.defaults.core.themes.dir = "assets/img/theme/vendor/jstree/dist/themes";
+      });
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
         .state('org', {
           url: '/org',
-          // templateUrl: 'app/pages/maps/maps.html',
+          template: '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           title: '组织机构',
           sidebarMeta: {
@@ -23,9 +27,9 @@
         })
         .state('org.org', {
           url: '/org',
-          // templateUrl: 'app/pages/maps/google-maps/google-maps.html',
-          // controller: 'GmapPageCtrl',
-          title: '安委会',
+          templateUrl: 'app/pages/org/org/org.html',
+          controller: 'orgPageCtrl',
+          title: '厂区人员角色',
           sidebarMeta: {
             order: 0,
           },
@@ -40,22 +44,13 @@
             order: 100,
           },
         })
-        .state('org.AJHB.reg', {
-          url: '/reg',
+        .state('org.investment', {
+          url: '/investment',
           // templateUrl: 'app/pages/maps/map-bubbles/map-bubbles.html',
-          // controller: 'MapBubblePageCtrl',
-          title: '管理制度',
+          controller: 'MapBubblePageCtrl',
+          title: '安全投入',
           sidebarMeta: {
             order: 200,
-          },
-        })
-        .state('org.AJHB.person', {
-          url: '/person',
-          // templateUrl: 'app/pages/maps/map-lines/map-lines.html',
-          // controller: 'MapLinesPageCtrl',
-          title: '人员情况',
-          sidebarMeta: {
-            order: 300,
           },
         });
   }
