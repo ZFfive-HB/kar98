@@ -1,6 +1,6 @@
 /**
- * @author a.demeshko
- * created on 12/21/15
+ * @author Bruce
+ * created on 2018.06.08
  */
 (function () {
   'use strict';

@@ -49,6 +49,14 @@
           sidebarMeta: {
             order: 101,
           },
+        }).state('emergency.fireAlert', {
+          url: '/fireAlert',
+          templateUrl: 'app/pages/emergency/fireAlert/fireAlert.html',
+          controller: 'fireAlertPageCtrl',
+          title: '火灾报警管理',
+          sidebarMeta: {
+            order: 101,
+          },
         });
         // 默认显示
     $urlRouterProvider.when('/emergency','/emergency/sys');
