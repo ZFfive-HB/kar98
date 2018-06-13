@@ -13,8 +13,8 @@
     $provide.decorator('$uiViewScroll', uiViewScrollDecorator);
     baConfigProvider.changeTheme({
       // 更换主题
-      // blur: true,
-      blur:false
+      blur: true,
+      // blur:false
     });
     
     baConfigProvider.changeColors({
