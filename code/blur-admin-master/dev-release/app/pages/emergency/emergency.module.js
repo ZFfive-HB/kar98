@@ -51,12 +51,8 @@
           },
         }).state('emergency.fireAlert', {
           url: '/fireAlert',
-<<<<<<< HEAD
-          // templateUrl: 'app/pages/laws/nationLaws/nationLaws.html',
-=======
           templateUrl: 'app/pages/emergency/fireAlert/fireAlert.html',
           controller: 'fireAlertPageCtrl',
->>>>>>> a2ebf5914c8bd7e4fb13f7412c2351e0fabc7132
           title: '火灾报警管理',
           sidebarMeta: {
             order: 101,
