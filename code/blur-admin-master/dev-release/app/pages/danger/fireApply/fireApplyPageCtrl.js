@@ -197,11 +197,9 @@
         }
       });
       var arry = $scope.fireApplyDatas;
-    // $scope.roles[$scope.roleSelected.value - 1]
       for (var i = 0, len = arry.length; i < len; i++) {
         if (arry[i].id == index + 1) {
           var role = $scope.roles[$scope.roleSelected.value - 2].label;
-          console.log(role);
           // console.log(role);
           arry[i].strus = role + '待审批';
         }
