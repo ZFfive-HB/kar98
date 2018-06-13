@@ -1,0 +1,40 @@
+<section>
+        <div class="row">
+          <div class="col-md-12">
+            <div ba-panel ba-panel-title="总体预算及费用执行情况" ba-panel-class="with-scroll">
+              <div
+                  line-chart
+                  line-data='lineData'
+                  line-xkey='y'
+                  line-ykeys='["a", "b"]'
+                  line-labels='["申请预算", "执行情况"]'
+                  line-colors='colors'>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div ba-panel ba-panel-title="各项费用占比" ba-panel-class="with-scroll">
+              <div
+                  donut-chart
+                  donut-data='donutData'
+                  donut-colors='colors'
+                  donut-formatter='""'>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div ba-panel ba-panel-title="安全投入效果同比" ba-panel-class="with-scroll ">
+              <div
+                  bar-chart
+                  bar-data='barData'
+                  bar-x='y'
+                  bar-y='["a", "b"]'
+                  bar-labels='["安全投入费用（万元）", "安全事故数量"]'
+                  bar-colors='colors'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
