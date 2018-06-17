@@ -1,0 +1,2 @@
+//查找test集合中所有数据
+db.test.find()
