@@ -1,2 +1,17 @@
-//查找test集合中所有数据
+// 插入
+db.test.insert({
+    "name":"测试",
+    "num":357
+    })
+//查找test集合(表)中所有数据
 db.test.find()
+// 更新
+db.test.update({ "name":"测试" },{ "$set":{ "name":"测试改" } })
+// 删除
+db.test.remove({
+    "name":"测试"
+    })
+// 使用js语法操作
+for(var i=0;i<100;i++)db.test.insert({"num":i})
+// 条件查询
+db.test.find().skip(3).limit(2).sort({"num":1})
