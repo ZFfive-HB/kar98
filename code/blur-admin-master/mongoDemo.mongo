@@ -1,0 +1,39 @@
+// 插入
+db.test.insert({
+    "name":"测试",
+    "num":357
+    })
+//查找test集合(表)中所有数据
+db.test.find()
+// 更新
+db.test.update({ 
+    "name":"测试" 
+    },{
+         "$set":{ 
+             "name":"测试改" 
+        } 
+    })
+// 如果更新数据不存在就自动创建一条
+db.test.update({
+    "y":100
+},{
+    "y":19
+},true)
+// 删除
+db.test.remove({
+    "name":"测试"
+    })
+// 使用js语法操作(控制台)
+// for(var i=0;i<100;i++)db.test.insert({"num":i})
+// 条件查询
+db.test.find().skip(3).limit(2).sort({"num":1})
+
+// 使用索引进行查询
+// 查询集合索引情况,默认使用_id
+db.test.getIndexes()
+// 创建索引1为正向，-1为逆向
+db.test.ensureIndex(
+{
+    "num":1
+}
+)
