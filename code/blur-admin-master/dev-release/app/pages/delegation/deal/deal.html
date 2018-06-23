@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="add-row-editable-table">
+        <button class="btn btn-primary" data-toggle="modal" ng-click="">添加协议</button>
+    </div>
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <td>num</td>
+            <td>名称</td>
+            <td>签订时间</td>
+            <td>需方</td>
+            <td>供方</td>
+            <td>供方负责人</td>
+            <td>需方负责人</td>
+            <td>项目名称</td>
+            <td>供方安全监管人员</td>
+            <td>需方安全监管人员</td>
+            <td>操作</td>
+        </tr>
+        <tr ng-repeat="deal in dealList" class="editable-row">
+            <td>
+                {{$index + 1}}
+            </td>
+            <td>
+                <span>
+                    {{ deal.name || '空' }}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {{ deal.date || '空' }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.need }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span >
+                    {{ deal.provide }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.needPerson }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.providePerson }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.projectName }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.needSuper }}
+                </span>
+            </td>
+            <td class="select-td">
+                <span>
+                    {{ deal.provideSuper }}
+                </span>
+            </td>
+            <td>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">编辑</button>
+                    <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button>
+                    <button class="btn btn-info editable-table-button btn-xs" ng-click="removeUser($index)">附件</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

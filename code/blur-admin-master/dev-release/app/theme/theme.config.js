@@ -11,7 +11,11 @@
   /** @ngInject */
   function config(baConfigProvider, colorHelper, $provide) {
     $provide.decorator('$uiViewScroll', uiViewScrollDecorator);
-    baConfigProvider.changeTheme({blur: true});
+    baConfigProvider.changeTheme({
+      // 更换主题
+      blur: true,
+      // blur:false
+    });
     
     baConfigProvider.changeColors({
      default: 'rgba(#000000, 0.2)',

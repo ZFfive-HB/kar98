@@ -35,8 +35,8 @@
           url: '/deal',
           // abstract:true,
           title: '安全协议',
-          // templateUrl: 'app/pages/profile/profile.html',
-          // controller: 'ProfilePageCtrl',
+          templateUrl: 'app/pages/delegation/deal/deal.html',
+          controller: 'dealPageCtrl',
           sidebarMeta: {
             icon: 'ion-grid',
             order: 300

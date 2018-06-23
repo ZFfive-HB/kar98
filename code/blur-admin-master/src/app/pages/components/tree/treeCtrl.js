@@ -53,8 +53,9 @@
     };
 
     $scope.addNewNode = function () {
+      console.log($scope);
       $scope.ignoreChanges = true;
-      var selected = this.basicTree.jstree(true).get_selected()[0];
+      var selected = this.bTree.jstree(true).get_selected()[0];
       if (selected)
         $scope.treeData.push({
           id: (newId++).toString(),
