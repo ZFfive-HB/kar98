@@ -21,6 +21,12 @@ DB_URL = 'mongodb://127.0.0.1:27000/test'
 mongoose.connect(DB_URL);
 // 数据库启动脚本 mongod -f /usr/local/etc/mongod.conf
 
+/** 日志输出*/
+var fs = require('fs');
+var logStream = fs.createWriteStream(path.join(__dirname,'APIServer.log'),{flags:'a'});
+// 借助morgan中间件实现日志打印
+app.use(logger('short',{stream:logStream}));
+
 /**
  * 接口路由
  */

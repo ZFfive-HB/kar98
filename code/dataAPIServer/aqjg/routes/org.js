@@ -27,4 +27,36 @@ router.get('/getOrg', function (req, res) {
   })
 });
 
+/* 增加节点 */
+router.post('/insertOrg',function(req,res){
+  var newOrg = req;
+  var o_org = new Org({
+    id: newOrg.id,
+    parent: newOrg.parent,
+    icon: newOrg.icon,
+    text: newOrg.text,
+    state: {
+        opened: newOrg.state.opened
+    },
+  });
+  o_org.save(function(err,res){
+    if(err){
+      console.log(err);
+    }else{
+      console.log('保存成功'+res)；
+    }
+  });
+});
+
+/* 删除节点(get方法实现)*/
+router.get('/delOrg',function(err,req){
+  var org_id = url.parse(req.url, true).query;
+  Org.remove(org_id,function(err,res){
+    if(err){
+      console.log(err);
+    }else{
+      console.log('删除成功'+ res);
+    }
+  });
+});
 module.exports = router;
