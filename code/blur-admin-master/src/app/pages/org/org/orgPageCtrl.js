@@ -87,7 +87,15 @@
     // getDefaultData()
     // 获取树的数据
     function getDefaultData() {
-        $http.get('app/pages/org/org/org.json').success(function (param) {
+        // $http.get('app/pages/org/org/org.json').success(function (param) {
+        //   $scope.treeData = param;
+        //   $scope.treeFlag = true;
+        //   // 刷新jstree对象
+        //   $scope.basicConfig.version++;
+        // });
+        console.log('获取数据');
+        $http.get('http://127.0.0.1:4001/org/getOrg').success(function (param) {
+          console.log(param);
           $scope.treeData = param;
           $scope.treeFlag = true;
           // 刷新jstree对象

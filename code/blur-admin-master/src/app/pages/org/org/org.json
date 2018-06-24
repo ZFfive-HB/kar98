@@ -1,136 +1,130 @@
 [{
-        "id": "n1",
-        "parent": "#",
-        "icon": "ion-person",
-        "text": "厂长",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n11",
-        "parent": "n1",
-        "type": "folder",
-        "text": "经理办公室",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n111",
-        "parent": "n11",
-        "icon": "ion-person",
-        "text": "生产运行主管厂长",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n112",
-        "parent": "n11",
-        "icon": "ion-person",
-        "text": "财务总监",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n113",
-        "parent": "n11",
-        "icon": "ion-person",
-        "text": "安全总监",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n114",
-        "parent": "n11",
-        "icon": "ion-person",
-        "text": "纪检组长",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n115",
-        "parent": "n11",
-        "icon": "ion-person",
-        "text": "其它分管厂长",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n116",
-        "parent": "n11",
-        "type": "folder",
-        "text": "生产运行部",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n1161",
-        "parent": "n116",
-        "icon": "ion-person",
-        "text": "主任",
-        "state": {
-            "opened": true
-        }
-    },
-    {
-        "id": "n1162",
-        "parent": "n116",
-        "icon": "ion-person",
-        "text": "值长（副主任）",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n1163",
-        "parent": "n116",
-        "type": "folder",
-        "text": "锅炉车间",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n1164",
-        "parent": "n116",
-        "type": "folder",
-        "text": "电气车间",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n117",
-        "parent": "n11",
-        "type": "folder",
-        "text": "消防安全部",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n118",
-        "parent": "n11",
-        "type": "folder",
-        "text": "生产安全部",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n11641",
-        "parent": "n1164",
-        "icon": "ion-person",
-        "text": "车间主任",
-        "state": {
-            "opened": true
-        }
-    }, {
-        "id": "n11642",
-        "parent": "n1164",
-        "icon": "ion-person",
-        "text": "操作工人",
-        "state": {
-            "opened": true
-        }
+    "id": "n1",
+    "parent": "#",
+    "icon": "ion-person",
+    "text": "厂长",
+    "state": {
+        "opened": true
     }
+}, {
+    "id": "n11",
+    "parent": "n1",
+    "type": "folder",
+    "text": "经理办公室",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n111",
+    "parent": "n11",
+    "icon": "ion-person",
+    "text": "生产运行主管厂长",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n112",
+    "parent": "n11",
+    "icon": "ion-person",
+    "text": "财务总监",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n113",
+    "parent": "n11",
+    "icon": "ion-person",
+    "text": "安全总监",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n114",
+    "parent": "n11",
+    "icon": "ion-person",
+    "text": "纪检组长",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n115",
+    "parent": "n11",
+    "icon": "ion-person",
+    "text": "其它分管厂长",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n116",
+    "parent": "n11",
+    "type": "folder",
+    "text": "生产运行部",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n1161",
+    "parent": "n116",
+    "icon": "ion-person",
+    "text": "主任",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n1162",
+    "parent": "n116",
+    "icon": "ion-person",
+    "text": "值长（副主任）",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n1163",
+    "parent": "n116",
+    "type": "folder",
+    "text": "锅炉车间",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n1164",
+    "parent": "n116",
+    "type": "folder",
+    "text": "电气车间",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n117",
+    "parent": "n11",
+    "type": "folder",
+    "text": "消防安全部",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n118",
+    "parent": "n11",
+    "type": "folder",
+    "text": "生产安全部",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n11641",
+    "parent": "n1164",
+    "icon": "ion-person",
+    "text": "车间主任",
+    "state": {
+        "opened": true
+    }
+}, {
+    "id": "n11642",
+    "parent": "n1164",
+    "icon": "ion-person",
+    "text": "操作工人",
+    "state": {
+        "opened": true
+    }
+}
 ]
