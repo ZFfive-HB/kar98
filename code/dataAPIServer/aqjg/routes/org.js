@@ -43,7 +43,7 @@ router.post('/insertOrg',function(req,res){
     if(err){
       console.log(err);
     }else{
-      console.log('保存成功'+res)；
+      console.log('保存成功'+res);
     }
   });
 });
