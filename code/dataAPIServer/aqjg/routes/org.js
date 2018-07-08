@@ -21,42 +21,79 @@ router.get('/getOrg', function (req, res) {
     } else {
       // 实现跨域请求
       res.setHeader("Access-Control-Allow-Origin","*");
+      console.log(orgs);
       // 返回数据
       res.send(JSON.stringify(orgs));
     }
   })
 });
-
 /* 增加节点 */
-router.post('/insertOrg',function(req,res){
-  var newOrg = req;
+router.post('/insertOrg',function(req,res,next){
+  if(req.method != "OPTIONS")
+  // 实现跨域请求
+  // { id: '0',
+  // parent: 'n114',
+  // icon: 'ion-ios-folder',
+  // text: '测试',
+  // state: { opened: true } }
+  var newOrg = req.body;
+  console.log(newOrg);
+  // 创建表对象
   var o_org = new Org({
     id: newOrg.id,
     parent: newOrg.parent,
     icon: newOrg.icon,
     text: newOrg.text,
     state: {
-        opened: newOrg.state.opened
+      // 默认展开
+        opened: true
     },
   });
-  o_org.save(function(err,res){
-    if(err){
+  
+  // 保存
+  o_org.save(function (err, res) {
+    if (err) {
       console.log(err);
-    }else{
-      console.log('保存成功'+res)；
+    } else {
+      console.log('保存成功' + res);
     }
   });
+
+
+  return res.send("请求成功");
+  // var o_org = new Org({
+  //   id: newOrg.id,
+  //   parent: newOrg.parent,
+  //   icon: newOrg.icon,
+  //   text: newOrg.text,
+  //   state: {
+  //       opened: newOrg.state.opened
+  //   },
+  // });
+  // o_org.save(function(err,res){
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     console.log('保存成功'+res);
+  //   }
+  // });
+  next();
 });
 
 /* 删除节点(get方法实现)*/
-router.get('/delOrg',function(err,req){
-  var org_id = url.parse(req.url, true).query;
-  Org.remove(org_id,function(err,res){
+router.get('/delOrg',function(req,res,err){
+  // console.log(req.query);
+  var delConditions = req.query;
+  // console.log(parmas);
+  console.log(delConditions);
+  Org.remove(delConditions,function(err,res){
     if(err){
       console.log(err);
     }else{
       console.log('删除成功'+ res);
     }
+
   });
+  return res.send("删除成功");
 });
 module.exports = router;

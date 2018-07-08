@@ -21,6 +21,17 @@ DB_URL = 'mongodb://127.0.0.1:27000/test'
 mongoose.connect(DB_URL);
 // 数据库启动脚本 mongod -f /usr/local/etc/mongod.conf
 
+/**配置跨域访问 */
+app.use(function(req,res,next){
+  res.header("Access-Control-Allow-Origin","*");
+  res.header("Access-Control-Allow-Headers","Origin,X-Requested-With, Content-Type,Accept");
+  
+  next()
+})
+/**解析post请求 */
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 /** 日志输出*/
 var fs = require('fs');
 var logStream = fs.createWriteStream(path.join(__dirname,'APIServer.log'),{flags:'a'});
