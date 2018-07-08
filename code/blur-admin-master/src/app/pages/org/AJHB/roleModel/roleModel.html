@@ -1,0 +1,35 @@
+<div class="horizontal-scroll">
+  <div style="padding-top:10px;margin-left:10px;">
+    <button class="btn btn-info editable-table-button btn-xs" >添加人员</button>
+  </div>
+  <div style="margin:10px;padding:5px;">
+    <table class="table" st-table="roleInformationData">
+      <thead>
+      <tr class="sortable ">
+        <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+        <th st-sort="">部门名称</th>
+        <th st-sort="">部门角色</th>
+        <th st-sort="">人员姓名</th>
+        <th st-sort="">性别</th>
+        <th>操作</th>
+      </tr>
+      
+      </thead>
+      <tbody>
+      <tr ng-repeat="data in roleInformationData">
+        <td class="table-id">{{data.id}}</td>
+        <td>{{data.depatementName}}</td>
+        <td>{{data.role}}</td>
+        <td>{{data.employName}}</td>
+        <td>{{data.sex}}</td>
+        <td>
+            <div class="buttons">
+                <button class="btn btn-info editable-table-button btn-xs" ng-click="">修改</button>
+                <button class="btn btn-info editable-table-button btn-xs" ng-click="">删除</button>
+            </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

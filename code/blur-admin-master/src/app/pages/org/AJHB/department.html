@@ -1,0 +1,50 @@
+<div class="horizontal-scroll">
+    <table class="table" st-table="departmentData">
+      <thead>
+      <tr class="sortable ">
+        <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+        <th st-sort="">部门名称</th>
+        <th st-sort="">部门级别</th>
+        <th st-sort="">部门负责人</th>
+        <th st-sort="">上级部门</th>
+        <th st-sort="">部门角色</th>
+        <th>操作</th>
+      </tr>
+      <!-- <tr>
+        <th></th>
+        <th><input st-search="firstName" placeholder="Search First Name" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="username" placeholder="Search Username" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th><input st-search="email" placeholder="Search Email" class="input-sm form-control search-input" type="search"/>
+        </th>
+        <th><input st-search="age" placeholder="Search Age" class="input-sm form-control search-input" type="search"/>
+        </th>
+      </tr>  -->
+      </thead>
+      <tbody>
+      <tr ng-repeat="data in departmentData">
+        <td class="table-id">{{data.id}}</td>
+        <td>{{data.depatementName}}</td>
+        <td>{{data.level}}</td>
+        <td>{{data.principal}}</td>
+        <td>{{data.higherOffice}}</td>
+        <td>{{data.role}}</td>
+        <td>
+            <div class="buttons">
+                <button class="btn btn-info editable-table-button btn-xs" ng-click="open('app/pages/org/AJHB/roleModel/roleModel.html','lg')">编辑人员</button>
+            </div>
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <!-- <tr>
+        <td colspan="6" class="text-center">
+          <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+        </td>
+      </tr> -->
+      </tfoot>
+    </table>
+  </div>
