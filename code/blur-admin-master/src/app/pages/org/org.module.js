@@ -43,8 +43,8 @@
         })
         .state('org.AJHB', {
           url: '/AJHB',
-          // templateUrl: 'app/pages/maps/leaflet/leaflet.html',
-          // controller: 'LeafletPageCtrl',
+          templateUrl: 'app/pages/org/AJHB/department.html',
+          controller: 'departmentPageCtrl',
           title: '安健环部',
           sidebarMeta: {
             order: 100,
