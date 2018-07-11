@@ -54,13 +54,8 @@ router.post('/insertOrg',function(req,res,next){
   o_org.save(function (err, res) {
     if (err) {
       console.log(err);
-<<<<<<< HEAD
-    } else {
-      console.log('保存成功' + res);
-=======
     }else{
       console.log('保存成功'+res);
->>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
     }
   });
 

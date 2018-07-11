@@ -134,12 +134,12 @@
 
 <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
 <!-- inject:js -->
-<script src="app/pages/pages.module.js"></script>
 <script src="app/theme/theme.module.js"></script>
+<script src="app/pages/pages.module.js"></script>
+<script src="app/theme/components/components.module.js"></script>
+<script src="app/theme/inputs/inputs.module.js"></script>
 <script src="app/pages/charts/charts.module.js"></script>
-<script src="app/pages/commission/commission.module.js"></script>
 <script src="app/pages/components/components.module.js"></script>
-<script src="app/pages/danger/danger.module.js"></script>
 <script src="app/pages/dangerStaff/danger.module.js"></script>
 <script src="app/pages/dashboard/dashboard.module.js"></script>
 <script src="app/pages/delegation/delegation.module.js"></script>
@@ -164,16 +164,25 @@
 <script src="app/pages/tables/tables.module.js"></script>
 <script src="app/pages/testPage/testPage.module.js"></script>
 <script src="app/pages/ui/ui.module.js"></script>
+<<<<<<< HEAD
 <script src="app/theme/components/components.module.js"></script>
 <script src="app/theme/inputs/inputs.module.js"></script>
 <script src="app/pages/charts/chartJs/chartJs.module.js"></script>
+=======
+<script src="app/pages/commission/commission.module.js"></script>
+<script src="app/pages/danger/danger.module.js"></script>
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/charts/amCharts/amCharts.module.js"></script>
+<script src="app/pages/charts/chartJs/chartJs.module.js"></script>
 <script src="app/pages/charts/chartist/chartist.module.js"></script>
 <script src="app/pages/charts/morris/morris.module.js"></script>
 <script src="app/pages/components/mail/mail.module.js"></script>
 <script src="app/pages/components/timeline/timeline.module.js"></script>
 <script src="app/pages/components/tree/tree.module.js"></script>
+<<<<<<< HEAD
 <script src="app/pages/ui/buttons/buttons.module.js"></script>
+=======
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/ui/alerts/alerts.module.js"></script>
 <script src="app/pages/ui/grid/grid.module.js"></script>
 <script src="app/pages/ui/icons/icons.module.js"></script>
@@ -184,12 +193,17 @@
 <script src="app/pages/ui/slider/slider.module.js"></script>
 <script src="app/pages/ui/tabs/tabs.module.js"></script>
 <script src="app/pages/ui/typography/typography.module.js"></script>
+<<<<<<< HEAD
+=======
+<script src="app/pages/ui/buttons/buttons.module.js"></script>
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/app.js"></script>
 <script src="app/theme/theme.config.js"></script>
 <script src="app/theme/theme.configProvider.js"></script>
 <script src="app/theme/theme.constants.js"></script>
 <script src="app/theme/theme.run.js"></script>
 <script src="app/theme/theme.service.js"></script>
+<<<<<<< HEAD
 <script src="app/pages/danger/dangerPageCtrl.js"></script>
 <script src="app/pages/delegation/delegationPageCtrl.js"></script>
 <script src="app/pages/fireControl/fireControlPageCtrl.js"></script>
@@ -204,6 +218,8 @@
 <script src="app/pages/security/securityPageCtrl.js"></script>
 <script src="app/pages/tables/TablesPageCtrl.js"></script>
 <script src="app/pages/testPage/testPageCtrl.js"></script>
+=======
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/theme/components/toastrLibConfig.js"></script>
 <script src="app/theme/directives/animatedChange.js"></script>
 <script src="app/theme/directives/autoExpand.js"></script>
@@ -219,6 +235,48 @@
 <script src="app/theme/services/fileReader.js"></script>
 <script src="app/theme/services/preloader.js"></script>
 <script src="app/theme/services/stopableInterval.js"></script>
+<<<<<<< HEAD
+=======
+<script src="app/pages/delegation/delegationPageCtrl.js"></script>
+<script src="app/pages/fireControl/fireControlPageCtrl.js"></script>
+<script src="app/pages/laws/LawsPageCtrl.js"></script>
+<script src="app/pages/management/managementPageCtrl.js"></script>
+<script src="app/pages/perfection/perfectionPageCtrl.js"></script>
+<script src="app/pages/profile/ProfileModalCtrl.js"></script>
+<script src="app/pages/profile/ProfilePage.directive.js"></script>
+<script src="app/pages/profile/ProfilePageCtrl.js"></script>
+<script src="app/pages/safeEdu/safeEduPageCtrl.js"></script>
+<script src="app/pages/safeFile/safeFilePageCtrl.js"></script>
+<script src="app/pages/security/securityPageCtrl.js"></script>
+<script src="app/pages/tables/TablesPageCtrl.js"></script>
+<script src="app/pages/testPage/testPageCtrl.js"></script>
+<script src="app/pages/danger/dangerPageCtrl.js"></script>
+<script src="app/theme/components/baPanel/baPanel.directive.js"></script>
+<script src="app/theme/components/baPanel/baPanel.service.js"></script>
+<script src="app/theme/components/baPanel/baPanelBlur.directive.js"></script>
+<script src="app/theme/components/baPanel/baPanelBlurHelper.service.js"></script>
+<script src="app/theme/components/baPanel/baPanelSelf.directive.js"></script>
+<script src="app/theme/components/baWizard/baWizard.directive.js"></script>
+<script src="app/theme/components/baWizard/baWizardCtrl.js"></script>
+<script src="app/theme/components/baWizard/baWizardStep.directive.js"></script>
+<script src="app/theme/components/baSidebar/BaSidebarCtrl.js"></script>
+<script src="app/theme/components/baSidebar/baSidebar.directive.js"></script>
+<script src="app/theme/components/baSidebar/baSidebar.service.js"></script>
+<script src="app/theme/components/baSidebar/baSidebarHelpers.directive.js"></script>
+<script src="app/theme/components/backTop/backTop.directive.js"></script>
+<script src="app/theme/components/contentTop/contentTop.directive.js"></script>
+<script src="app/theme/components/msgCenter/MsgCenterCtrl.js"></script>
+<script src="app/theme/components/msgCenter/msgCenter.directive.js"></script>
+<script src="app/theme/components/msgCenter/msgCenter.service.js"></script>
+<script src="app/theme/components/pageTop/pageTop.directive.js"></script>
+<script src="app/theme/components/progressBarRound/progressBarRound.directive.js"></script>
+<script src="app/theme/components/widgets/widgets.directive.js"></script>
+<script src="app/theme/filters/image/appImage.js"></script>
+<script src="app/theme/filters/image/kameleonImg.js"></script>
+<script src="app/theme/filters/image/profilePicture.js"></script>
+<script src="app/theme/filters/text/removeHtml.js"></script>
+<script src="app/theme/inputs/baSwitcher/baSwitcher.js"></script>
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/charts/chartJs/chartJs1DCtrl.js"></script>
 <script src="app/pages/charts/chartJs/chartJs2DCtrl.js"></script>
 <script src="app/pages/charts/chartJs/chartJsWaveCtrl.js"></script>
@@ -228,8 +286,11 @@
 <script src="app/pages/components/mail/mailMessages.js"></script>
 <script src="app/pages/components/timeline/TimelineCtrl.js"></script>
 <script src="app/pages/components/tree/treeCtrl.js"></script>
+<<<<<<< HEAD
 <script src="app/pages/danger/fireApply/fireApplyPageCtrl.js"></script>
 <script src="app/pages/danger/fireApply/selectpicker.directive.js"></script>
+=======
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/dashboard/blurFeed/BlurFeedCtrl.js"></script>
 <script src="app/pages/dashboard/blurFeed/blurFeed.directive.js"></script>
 <script src="app/pages/dashboard/calendar/dashboardCalendar.js"></script>
@@ -257,8 +318,8 @@
 <script src="app/pages/maps/leaflet/LeafletPageCtrl.js"></script>
 <script src="app/pages/maps/map-bubbles/MapBubblePageCtrl.js"></script>
 <script src="app/pages/maps/map-lines/MapLinesPageCtrl.js"></script>
-<script src="app/pages/org/investment/invePageCtrl.js"></script>
 <script src="app/pages/org/org/orgPageCtrl.js"></script>
+<<<<<<< HEAD
 <script src="app/pages/ui/buttons/ButtonPageCtrl.js"></script>
 <script src="app/pages/ui/icons/IconsPageCtrl.js"></script>
 <script src="app/pages/ui/modals/ModalsPageCtrl.js"></script>
@@ -288,26 +349,40 @@
 <script src="app/theme/filters/image/profilePicture.js"></script>
 <script src="app/theme/filters/text/removeHtml.js"></script>
 <script src="app/theme/inputs/baSwitcher/baSwitcher.js"></script>
+=======
+<script src="app/pages/org/investment/invePageCtrl.js"></script>
+<script src="app/pages/ui/icons/IconsPageCtrl.js"></script>
+<script src="app/pages/ui/modals/ModalsPageCtrl.js"></script>
+<script src="app/pages/ui/notifications/NotificationsPageCtrl.js"></script>
+<script src="app/pages/ui/buttons/ButtonPageCtrl.js"></script>
+<script src="app/pages/danger/fireApply/fireApplyPageCtrl.js"></script>
+<script src="app/pages/danger/fireApply/selectpicker.directive.js"></script>
+<script src="app/theme/components/backTop/lib/jquery.backTop.min.js"></script>
+<script src="app/theme/components/msgCenter/alertModal/alertModalCtrl.js"></script>
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/charts/amCharts/areaChart/AreaChartCtrl.js"></script>
 <script src="app/pages/charts/amCharts/barChart/BarChartCtrl.js"></script>
 <script src="app/pages/charts/amCharts/combinedChart/combinedChartCtrl.js"></script>
 <script src="app/pages/charts/amCharts/funnelChart/FunnelChartCtrl.js"></script>
 <script src="app/pages/charts/amCharts/ganttChart/ganttChartCtrl.js"></script>
-<script src="app/pages/charts/amCharts/lineChart/LineChartCtrl.js"></script>
 <script src="app/pages/charts/amCharts/pieChart/PieChartCtrl.js"></script>
+<script src="app/pages/charts/amCharts/lineChart/LineChartCtrl.js"></script>
 <script src="app/pages/components/mail/composeBox/composeBoxCtrl.js"></script>
 <script src="app/pages/components/mail/composeBox/composeModal.js"></script>
 <script src="app/pages/components/mail/detail/MailDetailCtrl.js"></script>
 <script src="app/pages/components/mail/list/MailListCtrl.js"></script>
+<<<<<<< HEAD
 <script src="app/pages/danger/fireApply/modal/sendBackModalCtrl.js"></script>
 <script src="app/pages/danger/fireApply/modal/successModalCtrl.js"></script>
 <script src="app/pages/org/org/addNodePage/addNodeModalPageCtrl.js"></script>
+=======
+>>>>>>> 2c59ec6c1c710435e82accb82f96ce267a9c2ace
 <script src="app/pages/safeEdu/inner/calendar/calendar.directive.js"></script>
 <script src="app/pages/safeEdu/inner/calendar/calendarCtrl.js"></script>
-<script src="app/pages/ui/modals/notifications/NotificationsCtrl.js"></script>
 <script src="app/pages/ui/modals/progressModal/ProgressModalCtrl.js"></script>
-<script src="app/theme/components/backTop/lib/jquery.backTop.min.js"></script>
-<script src="app/theme/components/msgCenter/alertModal/alertModalCtrl.js"></script>
+<script src="app/pages/ui/modals/notifications/NotificationsCtrl.js"></script>
+<script src="app/pages/danger/fireApply/modal/sendBackModalCtrl.js"></script>
+<script src="app/pages/danger/fireApply/modal/successModalCtrl.js"></script>
 <script src="app/pages/form/inputs/widgets/datePickers/datepickerCtrl.js"></script>
 <script src="app/pages/form/inputs/widgets/datePickers/datepickerpopupCtrl.js"></script>
 <script src="app/pages/form/inputs/widgets/oldSelect/OldSelectpickerPanelCtrl.js"></script>
@@ -322,10 +397,10 @@
 <script src="app/pages/security/add/form/widgets/datePickers/datepickerpopupCtrl.js"></script>
 <script src="app/pages/security/add/form/widgets/oldSelect/OldSelectpickerPanelCtrl.js"></script>
 <script src="app/pages/security/add/form/widgets/oldSelect/selectpicker.directive.js"></script>
-<script src="app/pages/security/add/form/widgets/oldSwitches/OldSwitchPanelCtrl.js"></script>
-<script src="app/pages/security/add/form/widgets/oldSwitches/switch.directive.js"></script>
 <script src="app/pages/security/add/form/widgets/select/GroupSelectpickerOptions.js"></script>
 <script src="app/pages/security/add/form/widgets/select/SelectpickerPanelCtrl.js"></script>
+<script src="app/pages/security/add/form/widgets/oldSwitches/OldSwitchPanelCtrl.js"></script>
+<script src="app/pages/security/add/form/widgets/oldSwitches/switch.directive.js"></script>
 <script src="app/pages/security/add/form/widgets/switches/SwitchDemoPanelCtrl.js"></script>
 <script src="app/pages/security/add/form/widgets/tagsInput/tagsInput.directive.js"></script>
 <!-- endinject -->
