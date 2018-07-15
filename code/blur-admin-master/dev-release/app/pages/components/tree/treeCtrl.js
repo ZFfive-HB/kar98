@@ -57,6 +57,7 @@
       $scope.ignoreChanges = true;
       var selected = this.bTree.jstree(true).get_selected()[0];
       if (selected)
+        // console.log(selected+'_'+(newId++).toString());
         $scope.treeData.push({
           id: (newId++).toString(),
           parent: selected,

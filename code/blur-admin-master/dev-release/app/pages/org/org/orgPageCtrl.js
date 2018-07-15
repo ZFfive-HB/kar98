@@ -50,7 +50,7 @@
         // 在回调函数中写入新节点
         if (result) {
           var newNodeData = {
-            id: (newId++).toString(),
+            id: selected+'_'+(newId++).toString(),
             parent: selected,
             icon: result.icon,
             text: result.name,
@@ -66,9 +66,6 @@
         // 刷新节点
         $scope.basicConfig.version++;
         // 在刷新节点后进行数据库请求，避免加载过慢
-        var header = {
-          'Content-Type':'application/x-www-form-urlencoded'
-        };
         $http.post("http://127.0.0.1:4001/org/insertOrg",newNodeData,{'Content-Type': 'application/x-www-form-urlencoded'})
         .success(function (param) {
           console.log('数据插入成功' + param);
@@ -100,7 +97,7 @@
       $scope.treeData = getDefaultData();
       $scope.basicConfig.version++;
     };
-
+    // 展开
     $scope.expand = function () {
       $scope.ignoreChanges = true;
       $scope.treeData.forEach(function (n) {
@@ -108,7 +105,7 @@
       });
       $scope.basicConfig.version++;
     };
-
+    // 折叠
     $scope.collapse = function () {
       $scope.ignoreChanges = true;
       $scope.treeData.forEach(function (n) {
@@ -116,7 +113,25 @@
       });
       $scope.basicConfig.version++;
     };
-
+    // 删除
+    $scope.delNode = function(){
+      $scope.ignoreChanges = true;
+      var selected = this.orgTree.jstree(true).get_selected()[0];
+      if (selected) {
+        var url_delNode = 'http://127.0.0.1:4001/org/delOrg?'
+        var selectedNode = 'id='+selected;
+        // 使用get请求删除，传递节点id
+        $http.get(url_delNode + selectedNode).finally(function(data){
+          alert("删除成功，请刷新页面");
+          console.log(data);
+          // 刷新
+          $scope.basicConfig.version++;
+        })
+        
+      } else {
+        alert("您还没有选择节点，请先选择节点");
+      }
+    };
     $scope.readyCB = function () {
       $timeout(function () {
         $scope.ignoreChanges = false;
@@ -127,7 +142,7 @@
     $scope.applyModelChanges = function () {
       return !$scope.ignoreChanges;
     };
-    // 获取树的数据
+    // 获取树的数据，初始化
     function getDefaultData() {
       // $http.get('app/pages/org/org/org.json').success(function (param) {
       //   $scope.treeData = param;
@@ -139,8 +154,8 @@
       var url_local = "app/pages/org/org/org.json";
       var url_api = "http://127.0.0.1:4001/org/getOrg";
       // console.log('获取数据');
-      $http.get(url_local).success(function (param) {
-        // console.log(param);
+      $http.get(url_api).success(function (param) {
+        console.log(param);
         $scope.treeData = param;
         $scope.treeFlag = true;
         // 刷新jstree对象
