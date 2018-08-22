@@ -9,7 +9,7 @@
     .controller('orgPageCtrl', orgPageCtrl);
 
   /** @ngInject */
-  function orgPageCtrl($scope, $timeout, $http, $log, $uibModal) {
+  function orgPageCtrl($scope, $timeout, $http, $log, $uibModal,dataServiceURL) {
     $scope.ignoreChanges = false;
     var newId = 0;
     $scope.ignoreChanges = false;
@@ -66,7 +66,7 @@
         // 刷新节点
         $scope.basicConfig.version++;
         // 在刷新节点后进行数据库请求，避免加载过慢
-        $http.post("http://127.0.0.1:4001/org/insertOrg",newNodeData,{'Content-Type': 'application/x-www-form-urlencoded'})
+        $http.post(dataServiceURL+"org/insertOrg",newNodeData,{'Content-Type': 'application/x-www-form-urlencoded'})
         .success(function (param) {
           console.log('数据插入成功' + param);
         }).error(function (err) {
@@ -118,7 +118,7 @@
       $scope.ignoreChanges = true;
       var selected = this.orgTree.jstree(true).get_selected()[0];
       if (selected) {
-        var url_delNode = 'http://127.0.0.1:4001/org/delOrg?'
+        var url_delNode = dataServiceURL + 'org/delOrg?'
         var selectedNode = 'id='+selected;
         // 使用get请求删除，传递节点id
         $http.get(url_delNode + selectedNode).finally(function(data){
@@ -152,9 +152,9 @@
       // });
       // 开发时候用本地数据进行测试
       var url_local = "app/pages/org/org/org.json";
-      var url_api = "http://127.0.0.1:4001/org/getOrg";
+      var url_api = dataServiceURL + "org/getOrg";
       // console.log('获取数据');
-      $http.get(url_api).success(function (param) {
+      $http.get(url_local).success(function (param) {
         console.log(param);
         $scope.treeData = param;
         $scope.treeFlag = true;

@@ -16,6 +16,7 @@ process.env.PORT = '4001';
 // mongodb建模中间件
 var mongoose = require('mongoose');
 // 数据库配置
+// 本地库
 DB_URL = 'mongodb://127.0.0.1:27000/test'
 // 连接mongodb
 mongoose.connect(DB_URL);
@@ -52,7 +53,8 @@ var org = require('./routes/org');
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
-// 默认路由
+
+// 路由模块跳转
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/org', org);

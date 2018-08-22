@@ -1,7 +1,8 @@
 <div class="horizontal-scroll">
     <div class="add-row-editable-table">
         <button class="btn btn-primary" ng-click="addLaw()">添加法律法规</button>
-        <button class="btn btn-primary" ng-click="addLaw()">Excel导入</button>
+        <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
+        <button class="btn btn-primary" ng-click="upload()">导入附件</button>
     </div>
     <table class="table" st-table="nationLaws">
         <thead>
