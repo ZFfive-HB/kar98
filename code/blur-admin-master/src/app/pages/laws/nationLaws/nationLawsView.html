@@ -27,7 +27,7 @@
         <div class="col-md-12 form-group">
             <span for="" class="col-sm-5 control-label" style="text-align: right;">实施日期：</span>
             <div class="col-md-7 col-sm-7" style="text-align: left;">
-                <span ng-bind="data.date"></span>
+                <span>{{data.date | date:'yyyy-MM-dd'}}</span>
             </div>
         </div>
     </div>

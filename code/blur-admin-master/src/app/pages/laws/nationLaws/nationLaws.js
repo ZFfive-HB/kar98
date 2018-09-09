@@ -9,31 +9,11 @@
         .controller('nationLawsCtrl', nationLawsCtrl);
 
     /** @ngInject */
-    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL) {
-        $scope.nationLaws = [];
+    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr) {
+        $scope.nationLawsArray = [];
         $scope.queryLaw = function(){
-            var url_local = dataServiceURL+"nationLaws/getLaws";
-            $http.get(url_local).success(function (param) {
-                console.log(param);
-                $scope.nationLaws = param;
-                
-                //push不好使，列表不更新
-/*                     $scope.nationLaws.push({
-                        "id": 22,
-                        "file_number":"22主席令第30号",
-                        "name": "22中华人民共和国刑法修正案(九)",
-                        "organization":"22全国人大",
-                        "date":"22018-11-01"
-                    }); */
-	                       /* $scope.$apply(function() {
-                               $scope.nationLaws.push({
-                                   "id": 22,
-                                   "file_number":"22主席令第30号",
-                                   "name": "22中华人民共和国刑法修正案(九)",
-                                   "organization":"22全国人大",
-                                   "date":"22018-11-01"
-                               });
-	                       }); */
+            $http.get(dataServiceURL+"nationLaws/getLaws").success(function (param) {
+                $scope.nationLawsArray = param;
             }).error(function (err) {
                 // 如果服务端请求失败则调用本地静态数据
                 console.log('服务器连接失败，请检查网络' + err);
@@ -67,7 +47,7 @@
                 size: '',
                 resolve: {
                     items: function () {
-                      return $scope.nationLaws[index];
+                      return $scope.nationLawsArray[index];
                     }
                 }
             });
@@ -86,7 +66,7 @@
                 size: '',
                 resolve: {
                     items: function () {
-                      return $scope.nationLaws[index];
+                      return $scope.nationLawsArray[index];
                     }
                 }
             });
@@ -94,13 +74,13 @@
 
         // 跳转删除页面
         $scope.removeLaw = function(index, id) {
-            /* $http.post(dataServiceURL+"nationLaws/deleteLaw",{id:id},{'Content-Type': 'application/x-www-form-urlencoded'}).success(function () {
+            $http.post(dataServiceURL+"nationLaws/deleteLaw?id="+id).success(function () {
                 toastr.success('删除成功!');
-                $scope.nationLaws.splice(index, 1);
+                $scope.nationLawsArray.splice(index, 1);
                 $scope.queryLaw();
             }).error(function (err) {
                 console.log('服务器连接失败，请检查网络' + err);
-            })  */
+            })
         };
 
         // 上传附件

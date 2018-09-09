@@ -34,8 +34,8 @@
         })
         /* toastr.success('新增成功!');
         $scope.data.id = 100; */
-        $uibModalInstance.close($scope.data);
-        this.$dismiss();
+        //$uibModalInstance.close($scope.data);
+        //this.$dismiss();
       };
   
     }

@@ -29,10 +29,10 @@
         </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="nationLaw in nationLaws" class="editable-row">
+            <tr ng-repeat="nationLaw in nationLawsArray" class="editable-row">
                 <!-- 序号 -->
                 <td>
-                    {{nationLaw.id}}
+                    {{$index+1}}
                 </td>
                 <!-- 文号 -->
                 <td>
@@ -55,7 +55,7 @@
                 <!-- 实施日期 -->
                 <td class="select-td">
             <span editable-select="nationLaw.date" e-name="date" e-form="rowform">
-              {{ nationLaw.date }}
+              {{ nationLaw.date | date:'yyyy-MM-dd'}}
             </span>
                 </td>
                 <!-- 操作 -->
