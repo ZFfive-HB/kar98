@@ -1,0 +1,37 @@
+<div class="modal-content">
+    <div class="modal-header bg-info">
+        <i class="ion-flame modal-icon"></i>
+        <span>查看法律法规</span>
+    </div>
+    <div class="modal-body text-center">
+        <div class="col-md-12 form-group">
+            <span for="" class="col-sm-5 control-label" style="text-align: right;">文号：</span>
+            <div class="col-sm-7" style="text-align: left;">
+                <span ng-bind="data.file_number"></span>
+            </div>
+        </div>
+        <div class="col-md-12 form-group">
+            <span for="" class="col-sm-5 control-label" style="text-align: right;">名称：</span>
+            <div class="col-md-7 col-sm-7" style="text-align: left;">
+                <span ng-bind="data.name"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <span for="" class="col-sm-5 control-label" style="text-align: right;">颁布机构：</span>
+            <div class="col-md-7 col-sm-7" style="text-align: left;">
+                <span ng-bind="data.organization"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <span for="" class="col-sm-5 control-label" style="text-align: right;">实施日期：</span>
+            <div class="col-md-7 col-sm-7" style="text-align: left;">
+                <span ng-bind="data.date"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$dismiss()" style="border-color:#ccc; color:#333;">关闭</button>
+    </div>
+</div>
