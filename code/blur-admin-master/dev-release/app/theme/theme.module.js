@@ -6,6 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.theme', [
+     //'angular-i18n',
       'toastr',
       'chart.js',
       'angular-chartist',
