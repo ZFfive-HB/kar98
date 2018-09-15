@@ -1,11 +1,11 @@
-<div class="horizontal-scroll" ng-controller="nationLawsCtrl">
+<div class="horizontal-scroll">
     <div class="add-row-editable-table">
         <button class="btn btn-primary" ng-click="addLaw()">添加法律法规</button>
         <!-- <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
         <button class="btn btn-primary" ng-click="upload()">导入附件</button> -->
     </div>
 
-    <table class="table" st-table="nationLaws">
+    <table class="table" ng-if="nationLawsArray" st-table="nationLawsArray">
         <thead>
         <tr>
             <th class="table-id" st-sort="id" st-sort-default="true" style="min-width: 60px;">序号</th>
@@ -82,7 +82,7 @@
         <tfoot>
         <tr>
             <td colspan="6" class="text-center">
-                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                <div st-pagination="" st-items-by-page="nationLawsPageSize" st-displayed-pages="5"></div>
             </td>
         </tr>
         </tfoot>
