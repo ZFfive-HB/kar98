@@ -10,14 +10,16 @@
 
     /** @ngInject */
     function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr) {
-        $scope.nationLawsArray = [];
+        $scope.nationLawsPageSize = 10;
         $scope.queryLaw = function(){
-            $http.get(dataServiceURL+"nationLaws/getLaws").success(function (param) {
+            var url = dataServiceURL+"nationLaws/getLaws";
+            //var url = "app/pages/laws/nationLaws/nationLaws.json";
+            $http.get(url).success(function (param) {
                 $scope.nationLawsArray = param;
             }).error(function (err) {
                 // 如果服务端请求失败则调用本地静态数据
                 console.log('服务器连接失败，请检查网络' + err);
-            }) 
+            })
         };
        
         $scope.addLaw = function() {
@@ -90,11 +92,6 @@
         };
 
         $scope.queryLaw();
-
-        editableOptions.theme = 'bs3';
-        editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
-        editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';
-
     }
 
 })();
