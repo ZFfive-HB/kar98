@@ -47,6 +47,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 // 组织架构
 var org = require('./routes/org');
+//国家法律
+var nationLaws = require('./routes/nationLaws');
 
 // app.use(logger('dev'));
 // app.use(express.json());
@@ -58,6 +60,7 @@ var org = require('./routes/org');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/org', org);
+app.use('/nationLaws', nationLaws);
 
 /** 
  * 模板引擎,这里可以不用
