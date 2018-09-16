@@ -46,9 +46,11 @@ router.post('/updateLaw',function(req,res,next){
 });
 
 /* 初始页面加载*/
-router.get('/getLaws', function (req, res) {
+router.post('/getLaws', function (req, res) {
+    var param = req.body;
+    console.info(param);
     // 直接调用实例的方法
-    NationLaws.fetch(function (err, laws) {
+    NationLaws.find({type:param.type}, function (err, laws) {
       if (err) {
         console.log(err);
       } else {

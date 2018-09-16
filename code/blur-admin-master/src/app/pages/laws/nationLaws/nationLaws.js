@@ -9,12 +9,14 @@
         .controller('nationLawsCtrl', nationLawsCtrl);
 
     /** @ngInject */
-    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr) {
+    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr, $stateParams, $log) {
+        $scope.type = $stateParams.type;
+        $scope.name = $stateParams.name;
         $scope.nationLawsPageSize = 10;
         $scope.queryLaw = function(){
             var url = dataServiceURL+"nationLaws/getLaws";
             //var url = "app/pages/laws/nationLaws/nationLaws.json";
-            $http.get(url).success(function (param) {
+            $http.post(url, {type: $scope.type},{'Content-Type': 'application/x-www-form-urlencoded'}).success(function (param) {
                 $scope.nationLawsArray = param;
             }).error(function (err) {
                 // 如果服务端请求失败则调用本地静态数据
@@ -27,12 +29,18 @@
                 animation: true,
                 controller: 'nationLawsAddModalPageCtrl',
                 templateUrl: 'app/pages/laws/nationLaws/nationLawsAdd.html',
-                size: ''
+                size: '',
+                resolve: {
+                    params:function(){
+                        return $stateParams;
+                    }
+                }
             });
             modalInstance.result.then(function (result) {
                 // 在回调函数中写入新节点
+                console.info(result);
                 if (result) {
-                    //$scope.nationLaws.push(angular.copy(result));
+                    //$scope.nationLawsArray.push(angular.copy(result));
                     $scope.queryLaw();
                 }
             }, function () {
@@ -49,7 +57,10 @@
                 size: '',
                 resolve: {
                     items: function () {
-                      return $scope.nationLawsArray[index];
+                        return $scope.nationLawsArray[index];
+                    },
+                    params:function(){
+                        return $stateParams;
                     }
                 }
             });

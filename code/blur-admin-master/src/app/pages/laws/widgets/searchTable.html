@@ -1,6 +1,6 @@
 <div class="horizontal-scroll">
     <div class="add-row-editable-table">
-        <button class="btn btn-primary" ng-click="addLaw()">添加法律法规</button>
+        <button class="btn btn-primary" ng-click="addLaw()">添加{{name}}</button>
         <!-- <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
         <button class="btn btn-primary" ng-click="upload()">导入附件</button> -->
     </div>
@@ -36,25 +36,25 @@
                 </td>
                 <!-- 文号 -->
                 <td>
-            <span editable-text="nationLaw.file_number" e-form="name" e-required >
+            <span e-form="name" e-required >
               {{ nationLaw.file_number || '未填写' }}
             </span>
                 </td>
                 <!-- 名称 -->
                 <td>
-            <span editable-text="nationLaw.name" e-name="name" e-form="rowform" e-required>
+            <span e-name="name" e-form="rowform" e-required>
               {{ nationLaw.name || '未填写' }}
             </span>
                 </td>
                 <!-- 颁布机构 -->
                 <td class="select-td">
-            <span editable-select="nationLaw.organization" e-name="status" e-form="rowform">
+            <span e-name="status" e-form="rowform">
               {{ nationLaw.organization }}
             </span>
                 </td>
                 <!-- 实施日期 -->
                 <td class="select-td">
-            <span editable-select="nationLaw.date" e-name="date" e-form="rowform">
+            <span e-name="date" e-form="rowform">
               {{ nationLaw.date | date:'yyyy-MM-dd'}}
             </span>
                 </td>

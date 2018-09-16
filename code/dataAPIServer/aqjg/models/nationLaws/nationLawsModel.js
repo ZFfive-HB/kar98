@@ -7,7 +7,8 @@ var NationLawsSchema = new mongoose.Schema({
     file_number: String,
     name: String,
     organization: String,
-    date: Date
+    date: Date,
+    type: String
 });
 
 //每次在存储数据之前都会调用此方法
