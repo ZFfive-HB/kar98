@@ -25,7 +25,8 @@
       }
     };
 
-    $scope.notifications = [{
+    $scope.notifications = [
+      {
         userId: 0,
         template: '&name 动火作业审批',
         time: '1 分钟之前'

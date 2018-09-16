@@ -18,6 +18,7 @@ router.post('/insertLaw',function(req,res,next){
     if (err) {
       console.log(err);
     }else{
+      res.setHeader("Access-Control-Allow-Origin","*");
       console.info('res');
       console.info(res);
       console.log('保存成功'+res);
@@ -28,7 +29,8 @@ router.post('/insertLaw',function(req,res,next){
 });
 
 router.post('/updateLaw',function(req,res,next){
-    if(req.method != "OPTIONS")
+    
+  if(req.method != "OPTIONS")
     var updateLaw = req.body;
     // 创建表对象
     //var o_nationLaws = new NationLaws();
@@ -37,10 +39,13 @@ router.post('/updateLaw',function(req,res,next){
       if (err) {
         console.log(err);
       }else{
+        
+
         console.info(res);
         console.log('修改成功'+res);
       }
     });
+    // res.setHeader("Access-Control-Allow-Origin","*");
     return res.send("请求成功");
     next();
 });
