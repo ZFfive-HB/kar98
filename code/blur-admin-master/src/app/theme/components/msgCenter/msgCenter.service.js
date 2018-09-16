@@ -33,10 +33,6 @@
       $rootScope.$broadcast('num',this.msg.length);
       // console.log('发送'+this.msg.length);
     };
-    // 火警信息列表
-    this.addFireAlertList = function(){
-      
-    };
   }
 
 })();

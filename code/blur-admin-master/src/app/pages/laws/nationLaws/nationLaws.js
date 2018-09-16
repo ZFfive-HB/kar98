@@ -9,15 +9,19 @@
         .controller('nationLawsCtrl', nationLawsCtrl);
 
     /** @ngInject */
-    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr) {
-        $scope.nationLawsArray = [];
+    function nationLawsCtrl($scope, $filter, editableOptions, editableThemes,$location, $http, $uibModal, dataServiceURL, toastr, $stateParams, $log) {
+        $scope.type = $stateParams.type;
+        $scope.name = $stateParams.name;
+        $scope.nationLawsPageSize = 10;
         $scope.queryLaw = function(){
-            $http.get(dataServiceURL+"nationLaws/getLaws").success(function (param) {
+            var url = dataServiceURL+"nationLaws/getLaws";
+            //var url = "app/pages/laws/nationLaws/nationLaws.json";
+            $http.post(url, {type: $scope.type},{'Content-Type': 'application/x-www-form-urlencoded'}).success(function (param) {
                 $scope.nationLawsArray = param;
             }).error(function (err) {
                 // 如果服务端请求失败则调用本地静态数据
                 console.log('服务器连接失败，请检查网络' + err);
-            }) 
+            })
         };
        
         $scope.addLaw = function() {
@@ -25,12 +29,18 @@
                 animation: true,
                 controller: 'nationLawsAddModalPageCtrl',
                 templateUrl: 'app/pages/laws/nationLaws/nationLawsAdd.html',
-                size: ''
+                size: '',
+                resolve: {
+                    params:function(){
+                        return $stateParams;
+                    }
+                }
             });
             modalInstance.result.then(function (result) {
                 // 在回调函数中写入新节点
+                console.info(result);
                 if (result) {
-                    //$scope.nationLaws.push(angular.copy(result));
+                    //$scope.nationLawsArray.push(angular.copy(result));
                     $scope.queryLaw();
                 }
             }, function () {
@@ -47,7 +57,10 @@
                 size: '',
                 resolve: {
                     items: function () {
-                      return $scope.nationLawsArray[index];
+                        return $scope.nationLawsArray[index];
+                    },
+                    params:function(){
+                        return $stateParams;
                     }
                 }
             });
@@ -90,11 +103,6 @@
         };
 
         $scope.queryLaw();
-
-        editableOptions.theme = 'bs3';
-        editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
-        editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';
-
     }
 
 })();

@@ -5,8 +5,11 @@
       .controller('nationLawsAddModalPageCtrl', nationLawsAddModalPageCtrl);
   
     /** @ngInject */
-    function nationLawsAddModalPageCtrl($scope, $uibModalInstance, toastr, $http, dataServiceURL) {
-      $scope.data = {}; 
+    function nationLawsAddModalPageCtrl($scope, $uibModalInstance, toastr, $http, dataServiceURL, params) {
+      $scope.params = params;
+      $scope.data = {
+        type:params.type
+      }; 
 
       $scope.open = open;
       $scope.opened = false;
@@ -27,7 +30,6 @@
           console.log('数据插入成功' + param);
           toastr.success('新增成功!');
           $uibModalInstance.close($scope.data);
-          this.$dismiss();
         }).error(function (err) {
           // 如果服务端请求失败则调用本地静态数据
           console.log('服务器连接失败，请检查网络' + err);
@@ -36,6 +38,11 @@
         $scope.data.id = 100; */
         //$uibModalInstance.close($scope.data);
         //this.$dismiss();
+      };
+
+      $scope.upload = function () {
+        var fileInput = document.getElementById('uploadFile');
+        fileInput.click();
       };
   
     }

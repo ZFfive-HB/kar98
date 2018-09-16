@@ -5,7 +5,8 @@
       .controller('nationLawsEditModalPageCtrl', nationLawsEditModalPageCtrl);
   
     /** @ngInject */
-    function nationLawsEditModalPageCtrl($scope, $uibModalInstance, toastr, items, $filter, $http, dataServiceURL) {
+    function nationLawsEditModalPageCtrl($scope, $uibModalInstance, toastr, items, $filter, $http, dataServiceURL, params) {
+      $scope.params = params;
       $scope.data = angular.copy(items);
       $scope.data.date = new Date(Date.parse($filter('date')($scope.data.date, "yyyy/MM/dd")));
       $scope.open = open;

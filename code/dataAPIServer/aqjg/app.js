@@ -16,10 +16,8 @@ process.env.PORT = '4001';
 // mongodb建模中间件
 var mongoose = require('mongoose');
 // 数据库配置
-// 数据库ip
-var dbPath = require('./conf');
-// 测试库用test实例，正式库用aqjg实例
-DB_URL = 'mongodb://'+dbPath.awsPath+'test'
+// 本地库
+DB_URL = 'mongodb://127.0.0.1:27000/test'
 // 连接mongodb
 mongoose.connect(DB_URL);
 // 数据库启动脚本 mongod -f /usr/local/etc/mongod.conf
@@ -49,6 +47,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 // 组织架构
 var org = require('./routes/org');
+//国家法律
+var nationLaws = require('./routes/nationLaws');
 
 // app.use(logger('dev'));
 // app.use(express.json());
@@ -60,6 +60,7 @@ var org = require('./routes/org');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/org', org);
+app.use('/nationLaws', nationLaws);
 
 /** 
  * 模板引擎,这里可以不用

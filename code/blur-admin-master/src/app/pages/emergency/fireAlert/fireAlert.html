@@ -1,69 +1,112 @@
-<table class="table table-bordered table-hover table-condensed">
-    <tr>
-        <td>#</td>
-        <td>报警编号</td>
-        <td>报警日期</td>
-        <td>报警部门</td>
-        <td>报警人</td>
-        <td>值长</td>
-        <td>指派状态</td>
-        <td>操作</td>
-    </tr>
-    <tr ng-repeat="data in fireAlertData" class="editable-row">
-        <!-- 序号 -->
-        <td>
-            {{data.id}}
-        </td>
-        <!-- 报警编号 -->
-        <td>
-            <span editable-text="data.num" e-form="num" e-required>
-                {{ data.num }}
-            </span>
-        </td>
-        <!-- 日期 -->
-        <td>
-            <span editable-text="data.date" e-name="date" e-required>
-                {{ data.date || '未填写' }}
-            </span>
-        </td>
-        <!-- 部门 -->
-        <td class="select-td">
-            <span editable-select="data.dept" e-name="dept">
-                {{ data.dept }}
-            </span>
-        </td>
-        <!-- 报警人 -->
-        <td class="select-td">
-            <span editable-select="data.person" e-name="person">
-                {{ data.person }}
-            </span>
-        </td>
-        <!-- 值长 -->
-        <td class="select-td">
-            <span editable-select="data.duty" e-name="duty">
-                {{ data.duty || '未填写' }}
-            </span>
-        </td>
-        <!-- 当前状态 -->
-        <td class="select-td">
-            <span editable-select="data.stus" e-name="stus" e-form="rowform" e-selectpicker e-ng-options="s.value as s.text for s in stus">
-                {{ showStus(data) }}
-            </span>
-        </td>
-        <!-- 操作 -->
-        <td>
-            <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == data">
-                <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
-                    保存
-                </button>
-                <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
-                    取消
-                </button>
-            </form>
-            <div class="buttons" ng-show="!rowform.$visible">
-                <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()" ng-disabled="data.locked">指派</button>
-                <button class="btn btn-danger editable-table-button btn-xs" ng-click="fileLock($index)">归档</button>
-            </div>
-        </td>
-    </tr>
-</table>
+<div class="horizontal-scroll">
+    <table class="table" st-table="fireAlertData">
+        <thead>
+            <tr>
+                <th class="table-id" st-sort="id" st-sort-default="true" style="min-width: 60px;">#</th>
+                <th st-sort="file_number" style="max-width: 380px;text-align: center;">报警编号</th>
+                <th st-sort="file_number" style="max-width: 380px;text-align: center;">报警日期</th>
+                <th st-sort="organization" style="text-align: center;">报警部门</th>
+                <th st-sort="date" style="text-align: center;">报警人</th>
+                <th st-sort="date" style="text-align: center;">值长</th>
+                <th st-sort="date" style="text-align: center;">当前状态</th>
+                <th align="center" style="text-align: center;">操作</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input st-search="file_number" placeholder="查询编号" class="input-sm form-control search-input" type="search"
+                        style="margin-left:0px;" />
+                </th>
+                <th>
+                    <input st-search="name" placeholder="查询日期" class="input-sm form-control search-input" type="search" style="margin-left:0px;"
+                    />
+                </th>
+                <th>
+                    <input st-select="organization" placeholder="查询部门" style="margin-left:0px;" class="input-sm form-control search-input"
+                        type="search" />
+                </th>
+                <th>
+                    <input st-search="date" placeholder="查询报警人" style="margin-left:0px;" class="input-sm form-control search-input"
+                        type="search" />
+                </th>
+                <th>
+                    <input st-search="date" placeholder="查询值长" style="margin-left:0px;" class="input-sm form-control search-input"
+                        type="search" />
+                </th>
+                <th>
+                    <input st-search="date" placeholder="查询状态" style="margin-left:0px;" class="input-sm form-control search-input"
+                        type="search" />
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in fireAlertData" class="editable-row">
+                <!-- 序号 -->
+                <td>
+                    {{data.id}}
+                </td>
+                <!-- 文号 -->
+                <td>
+                    <span editable-text="data.num" e-form="name" e-required>
+                        {{ data.num || '未填写' }}
+                    </span>
+                </td>
+                <!-- 名称 -->
+                <td>
+                    <span editable-text="data.date" e-name="name" e-form="rowform" e-required>
+                        {{ data.date || '未填写' }}
+                    </span>
+                </td>
+                <!-- 颁布机构 -->
+                <td class="select-td">
+                    <span editable-select="data.dept" e-name="status" e-form="rowform">
+                        {{ data.dept }}
+                    </span>
+                </td>
+                <!-- 实施日期 -->
+                <td class="select-td">
+                    <span editable-select="data.person" e-name="date">
+                        {{ data.person }}
+                    </span>
+                </td>
+                <td class="select-td">
+                        <span editable-select="data.duty" e-name="date">
+                            {{ data.duty }}
+                        </span>
+                    </td>
+                <td class="select-td">
+                    <span editable-select="data.stus" e-name="date">
+                        {{ data.stus }}
+                    </span>
+                </td>
+                <!-- 操作 -->
+                <td>
+                    <!-- <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
+                              shown="inserted == user">
+                          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+                            Save
+                          </button>
+                          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+                            Cancel
+                          </button>
+                        </form> -->
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button class="btn btn-info editable-table-button btn-xs" ng-click="">分配</button>
+                        <button class="btn btn-primary editable-table-button btn-xs" ng-click=''>归档</button>
+                        <!-- <button class="btn btn-primary editable-table-button btn-xs" ng-click="editLaw()">编辑</button>
+                        <button class="btn btn-warning editable-table-button btn-xs" ng-click="download()">下载</button>
+                        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button> -->
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="12" class="text-center">
+                    <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
