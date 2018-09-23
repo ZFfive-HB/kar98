@@ -16,10 +16,6 @@
                 date: '2018-02-02',
                 dept: '动火车间',
                 person: 'Bruce',
-<<<<<<< HEAD
-                duty:'张三',
-                stus: '未分配'
-=======
                 duty: '张三',
                 stus: '0',
                 locked: false
@@ -86,7 +82,6 @@
             {
                 value: 4,
                 text: '系统管理员'
->>>>>>> parent of 169d3b7... 修正es6语法不能打包问题
             },
             {
                 id: 2,
