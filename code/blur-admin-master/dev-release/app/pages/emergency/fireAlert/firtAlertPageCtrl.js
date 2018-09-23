@@ -24,75 +24,41 @@
 
         ];
         // 火警的实体类
-        // 暂不支持es6写法
-        // class FireAlertData {
-        //     // 构造函数
-        //     constructor(id, num, date, dept, person, duty, stus, locked) {
-        //         this.id = id;
-        //         this.num = num;
-        //         this.date = date;
-        //         this.dept = dept;
-        //         this.person = person;
-        //         this.duty = duty;
-        //         this.stus = stus;
-        //         this.locked = locked;
-        //     }
-        // }
-        function FireAlertData(id, num, date, dept, person, duty, stus, locked) {
-            this.id = id;
-            this.num = num;
-            this.date = date;
-            this.dept = dept;
-            this.person = person;
-            this.duty = duty;
-            this.stus = stus;
-            this.locked = locked;
-        };
+        class FireAlertData {
+            // 构造函数
+            constructor(id, num, date, dept, person, duty, stus, locked, ) {
+                this.id = id;
+                this.num = num;
+                this.date = date;
+                this.dept = dept;
+                this.person = person;
+                this.duty = duty;
+                this.stus = stus;
+                this.locked = locked;
+            }
+        }
 
         // 将报警信息实例化
         var getFireAlert = function (msg) {
-            // 暂不支持es6写法
-            // msg.map((v, i) => {
-            //     // id
-            //     let id = i+1;
-            //     // 生成一个新的编号num
-            //     let num = 'SY' + Date.now().toString(36).substr(3);
-            //     // 当前时间
-            //     let date = moment().format('YYYY-MM-DD');
-            //     // 部门
-            //     let dept = v.addr;
-            //     // 报警人
-            //     let person = 'Bruce';
-            //     // 值长
-            //     let duty = '管理员';
-            //     // 状态，初始状态为0
-            //     let stus = '0';
-            //     // 是否归档
-            //     let locked = false;
-
-            //     let obj_fireAlert = new FireAlertData(id, num, date, dept, person, duty, stus, locked);
-            //     $scope.fireAlertData.push(obj_fireAlert);
-            // });
-
-            msg.map(function(v, i){
+            msg.map((v, i) => {
                 // id
-                var id = i+1;
+                let id = i+1;
                 // 生成一个新的编号num
-                var num = 'SY' + Date.now().toString(36).substr(3);
+                let num = 'SY' + Date.now().toString(36).substr(3);
                 // 当前时间
-                var date = moment().format('YYYY-MM-DD');
+                let date = moment().format('YYYY-MM-DD');
                 // 部门
-                var dept = v.addr;
+                let dept = v.addr;
                 // 报警人
-                var person = 'Bruce';
+                let person = 'Bruce';
                 // 值长
-                var duty = '管理员';
+                let duty = '管理员';
                 // 状态，初始状态为0
-                var stus = '0';
+                let stus = '0';
                 // 是否归档
-                var locked = false;
+                let locked = false;
 
-                var obj_fireAlert = new FireAlertData(id, num, date, dept, person, duty, stus, locked);
+                let obj_fireAlert = new FireAlertData(id, num, date, dept, person, duty, stus, locked);
                 $scope.fireAlertData.push(obj_fireAlert);
             });
         };
