@@ -16,8 +16,8 @@ process.env.PORT = '4001';
 // mongodb建模中间件
 var mongoose = require('mongoose');
 // 数据库配置
-// 本地库
-DB_URL = 'mongodb://127.0.0.1:27000/test'
+db_config = require('./config');
+DB_URL = 'mongodb://'+db_config.aws+'/test'
 // 连接mongodb
 mongoose.connect(DB_URL);
 // 数据库启动脚本 mongod -f /usr/local/etc/mongod.conf
@@ -38,6 +38,8 @@ var fs = require('fs');
 var logStream = fs.createWriteStream(path.join(__dirname,'APIServer.log'),{flags:'a'});
 // 借助morgan中间件实现日志打印
 app.use(logger('short',{stream:logStream}));
+// 静态文件，每个模块对应一个文件夹
+app.use("/static",express.static("./static"));
 
 /**
  * 接口路由
