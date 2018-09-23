@@ -4,6 +4,7 @@ data/db/journal/WiredTigerLog.0000000003
 data/db/diagnostic.data/metrics.interim
 code/blur-admin-master/dev-release
 <<<<<<< HEAD
+<<<<<<< HEAD
 code/blur-admin-master/release
 code/blur-admin-master/dev-release/app/config/config.module.js
 code/blur-admin-master/dev-release/app/config/config.module.js
@@ -23,5 +24,7 @@ code/blur-admin-master/dev-release/app/pages/emergency/fireAlert/fireAlert.html
 code/blur-admin-master/dev-release/app/config/config.module.js
 code/blur-admin-master/dev-release/app/config/config.module.js
 code/blur-admin-master/dev-release/app/config/config.module.js
+=======
+>>>>>>> parent of 6876e25... 添加git忽略文件
 =======
 >>>>>>> parent of 6876e25... 添加git忽略文件
