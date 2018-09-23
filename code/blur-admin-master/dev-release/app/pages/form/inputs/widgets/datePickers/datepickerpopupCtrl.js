@@ -11,30 +11,16 @@
     /** @ngInject */
     function datepickerpopupCtrl($scope) {
 
-        // $scope.open = open;
-        // $scope.opened = false;
-        // $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        // $scope.format = $scope.formats[0];
-        // $scope.options = {
-        //     showWeeks: false
-        // };
-
-        // function open() {
-        //     $scope.opened = true;
-        // }
-     
-        
-
-        $scope.dat = new Date();
-        $scope.format = "yyyy/MM/dd";
-        $scope.altInputFormats = ['yyyy/M!/d!'];
-
-        $scope.popup1 = {
-                 opened: false
-        };
-        $scope.open1 = function () {
-                $scope.popup1.opened = true;
+        $scope.open = open;
+        $scope.opened = false;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+        $scope.options = {
+            showWeeks: false
         };
 
+        function open() {
+            $scope.opened = true;
+        }
     }
 })();

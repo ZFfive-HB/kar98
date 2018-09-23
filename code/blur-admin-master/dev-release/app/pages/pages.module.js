@@ -43,7 +43,7 @@
     // 危险物品管理
     'BlurAdmin.pages.dangerStaff',
     // 重大危险源
-    'BlurAdmin.pages.majorDanger',
+    'BlurAdmin.pages.majorDanger', 
     // 消防设施管理
     'BlurAdmin.pages.fireControl',
     // 安全检查

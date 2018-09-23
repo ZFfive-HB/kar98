@@ -1,10 +1,11 @@
 <div class="horizontal-scroll">
     <div class="add-row-editable-table">
-        <button class="btn btn-primary" ng-click="addLaw()">添加法律法规</button>
-        <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
-        <button class="btn btn-primary" ng-click="upload()">导入附件</button>
+        <button class="btn btn-primary" ng-click="addLaw()">添加{{name}}</button>
+        <!-- <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
+        <button class="btn btn-primary" ng-click="upload()">导入附件</button> -->
     </div>
-    <table class="table" st-table="nationLaws">
+
+    <table class="table" ng-if="nationLawsArray" st-table="nationLawsArray">
         <thead>
         <tr>
             <th class="table-id" st-sort="id" st-sort-default="true" style="min-width: 60px;">序号</th>
@@ -28,33 +29,33 @@
         </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="nationLaw in nationLaws" class="editable-row">
+            <tr ng-repeat="nationLaw in nationLawsArray" class="editable-row">
                 <!-- 序号 -->
                 <td>
-                    {{nationLaw.id}}
+                    {{$index+1}}
                 </td>
                 <!-- 文号 -->
                 <td>
-            <span editable-text="nationLaw.file_number" e-form="name" e-required >
+            <span e-form="name" e-required >
               {{ nationLaw.file_number || '未填写' }}
             </span>
                 </td>
                 <!-- 名称 -->
                 <td>
-            <span editable-text="nationLaw.name" e-name="name" e-form="rowform" e-required>
+            <span e-name="name" e-form="rowform" e-required>
               {{ nationLaw.name || '未填写' }}
             </span>
                 </td>
                 <!-- 颁布机构 -->
                 <td class="select-td">
-            <span editable-select="nationLaw.organization" e-name="status" e-form="rowform">
+            <span e-name="status" e-form="rowform">
               {{ nationLaw.organization }}
             </span>
                 </td>
                 <!-- 实施日期 -->
                 <td class="select-td">
-            <span editable-select="nationLaw.date" e-name="date">
-              {{ nationLaw.date }}
+            <span e-name="date" e-form="rowform">
+              {{ nationLaw.date | date:'yyyy-MM-dd'}}
             </span>
                 </td>
                 <!-- 操作 -->
@@ -69,11 +70,11 @@
                       </button>
                     </form> -->
                     <div class="buttons" ng-show="!rowform.$visible">
-                        <button class="btn btn-info editable-table-button btn-xs" ng-click="">查看</button>
+                        <button class="btn btn-info editable-table-button btn-xs" ng-click="viewLaw($index, nationLaw.id)">查看</button>
                         <!-- <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">编辑</button> -->
-                        <button class="btn btn-primary editable-table-button btn-xs" ng-click="editLaw()">编辑</button>
+                        <button class="btn btn-primary editable-table-button btn-xs" ng-click="editLaw($index, nationLaw.id)">编辑</button>
                         <button class="btn btn-warning editable-table-button btn-xs" ng-click="download()">下载</button>
-                        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button>
+                        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeLaw($index, nationLaw.id)">删除</button>
                     </div>
                 </td>
             </tr>
@@ -81,7 +82,7 @@
         <tfoot>
         <tr>
             <td colspan="6" class="text-center">
-                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                <div st-pagination="" st-items-by-page="nationLawsPageSize" st-displayed-pages="5"></div>
             </td>
         </tr>
         </tfoot>
