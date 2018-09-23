@@ -11,11 +11,11 @@
     'BlurAdmin.pages.dashboard',
 
     // 'BlurAdmin.pages.kar98',
-    // 'BlurAdmin.pages.ui',
-    // 'BlurAdmin.pages.components',
+    'BlurAdmin.pages.ui',
+    'BlurAdmin.pages.components',
     // 表单控件
-    // 'BlurAdmin.pages.form',
-    // 'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.form',
+    'BlurAdmin.pages.tables',
     // 'BlurAdmin.pages.charts',
     // 'BlurAdmin.pages.maps',
     // 基本信息
